@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300);
+
+$grey      : #e6e6e6;
+$midnight  : #1f282f;
+$white     : #ffffff;
+$nav-color : $white;
+$blue      : #2196f3;
+$red       : #df2324;
+$yellow    : #fdd701;
+
+@mixin transition($prop, $time) {
+  transition: $prop $time ease;
+}
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+}
+
+.wrapper {
+  display: flex;
+  background-color: #D9EDF7;
+
+  flex-grow: 1;
+}
+
+
+.sidebar {
+  min-width: 120px;
+  background-color: $midnight;
+}
+
+.sidebar-list {
+  display: flex;
+  margin-top: 30px;
+
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item {
+  margin-top: 25px;
+  cursor: pointer;
+  color: #3a3d46;
+  font-size: 24px;
+
+  @include transition(color, 200ms);
+  &:hover {
+    color: $white;
+  }
+}
+
+.sb-active {
+  color: $white;
+}
+
+
+
+.navigation {
+  display: flex;
+
+  align-items: center;
+}
+
+
+.categories {
+  display: flex;
+  margin-left: 45px;
+}
+
+.category-item {
+  margin: 0 10px;
+}
+
