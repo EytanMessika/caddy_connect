@@ -1,22 +1,22 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all 
+    @products = Product.all
 
     client = GmailClient.new(current_user)
     p "----------------------------"
     mail = client.get_mail("156b27dc2b090088")
     pp client.get_body(mail)
-  end 
+  end
 
   def create
-  end 
+  end
 
   def new
-  end 
+  end
 
   def update
-  end 
+  end
 
   def edit
   end

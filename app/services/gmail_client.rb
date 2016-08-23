@@ -1,7 +1,9 @@
 class GmailClient
 
   def get_body(mail)
-    Base64.urlsafe_decode64(mail["payload"]["body"]["data"])
+    if mail['error'].nil?
+      Base64.urlsafe_decode64(mail["payload"]["body"]["data"])
+    end
   end
 
   def initialize(user)

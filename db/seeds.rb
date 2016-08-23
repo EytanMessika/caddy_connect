@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.destroy_all
-# Product.destroy_all
+User.destroy_all
+Product.destroy_all
 
-# customer = User.create(email: "customer@test.com", password: "123456")
-
-# product = Product.create!(name: "8x4", category: "Grue", numberplate: "867 RJB 34", price: 870, description: "Très beau camion", availability: true)
+Product.create!(name: "Poele", price: "10", description: "poele a steak", brand: "Tefal", ecommerce: "Amazon", tracking_number: "1ZV4V414A600215239",  user_id: 6, photo: "http://i2.cdscdn.com/pdt2/2/7/3/1/700x700/ge506273/rw/tradifonte-poele-fonte-20-cm.jpg")
+Product.create!(name: "Velo", price: "150", description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "LA007319522FR",  user_id: 6, photo: "http://www.velo-cycle-vtt.com/images/mtb-monster-xt.jpg")
+Product.create!(name: "Chevalet", price: "111", description: "en Uranium", brand: "DESERRES", ecommerce: "Amazon", tracking_number: "CW015373485FR",  user_id: 6, photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
+Product.create!(name: "Pokemon", price: "66", description: "Pikachu", brand: "Prout", ecommerce: "Amazon", tracking_number: "400962332",  user_id: 6, photo: "http://i2.kym-cdn.com/entries/icons/original/000/019/677/5Pikachu.png")
 
