@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     # mail = client.get_mail("156b27dc2b090088")
     # pp client.get_body(mail)
     # ////////////
-  end 
+  end
 
   def create
     @product = Product.new(product_params)
@@ -29,6 +29,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
+  end
+
+  def stats
+    @products = current_user.products
+
   end
 
     private
