@@ -17,7 +17,7 @@
       <li class="sidebar-item sb-active"><i class="fa fa-home"></i></li>
       <li class="sidebar-item"><i class="fa fa-bar-chart"></i></li>
       <li class="sidebar-item"><i class="fa fa-bolt"></i></li>
-      <li class="sidebar-item"><i class="fa fa-user"></i></li>    
+      <li class="sidebar-item"><i class="fa fa-user"></i></li>
     </ul>
   </aside>
 <% @products.each do |product| %>
@@ -44,7 +44,7 @@
                       Suivre mon colis
                     </button>
                     <% else %>
-                    Status
+                    <%= product.delivery_steps%>
                     <% end %>
                       <!-- Modal -->
                   <div class="modal fade" id="product-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -71,6 +71,5 @@
             </div>
             <% end %>
         </div>
-
 
 

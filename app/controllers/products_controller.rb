@@ -7,12 +7,19 @@ class ProductsController < ApplicationController
     # p "----------------------------"
     # mail = client.get_mail("156b27dc2b090088")
     # pp client.get_body(mail)
-    # ////////////
-  end 
+  end
 
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+    if @product.save
+         redirect_to products_path(@product)
+    else
+      render 'new'
+    end
+  end
+
+  def status
     if @product.save
       redirect_to index_path
     else
@@ -21,11 +28,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
   end
 
   def update
-    @product.update(product_params)
+    @product.assign_attributes(product_params)
+    status = AftershipService.new(current_user).get_tracking_status(@product)
+    @product.delivery_steps = status
+    @product.save
     redirect_to :back
   end
 
