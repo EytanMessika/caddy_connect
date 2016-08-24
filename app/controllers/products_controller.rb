@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all 
+    @products = Product.all
 
     # client = GmailClient.new(current_user)
     # p "----------------------------"
@@ -10,13 +10,13 @@ class ProductsController < ApplicationController
   end 
 
   def create
-  end 
+  end
 
   def new
-  end 
+  end
 
   def update
-  end 
+  end
 
   def edit
   end
