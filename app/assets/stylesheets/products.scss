@@ -62,8 +62,20 @@ body {
   }
 }
 
+.sidebar-item :visited{
+  color:#3a3d46;
+  @include transition(color, 200ms);
+  &:hover {
+    color: $white;
+  }
+}
+
 .sb-active {
   color: $white;
+}
+
+.sb-active :visited {
+  color: white;
 }
 
 
@@ -86,6 +98,11 @@ body {
 margin-top: 15px;
 color: white;
 font-weight: bolder;
+}
+
+.well {
+ background: #1f3a50!important;
+ border:none!important;
 }
 
 

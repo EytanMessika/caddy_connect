@@ -108,15 +108,15 @@
     transition: all 0.3s ease 0s;
 }
 .pricingTable:hover .pricingTable-header{
-    background-color: #F6C667;
+    background-color: #415F77;
 }
 .pricingTable .price-icon{
     display: block;
     width: 87px;
     height: 48px;
     background: #fff;
-    border-left: 2px solid #F6C667;
-    border-right: 2px solid #F6C667;
+    border-left: 2px solid #415F77;
+    border-right: 2px solid #415F77;
     position: absolute;
     top: -20px;
     left: 35%;
@@ -127,8 +127,8 @@
     width: 61.5px;
     height: 61.5px;
     background: #fff;
-    border-bottom: 3px solid #F6C667;
-    border-left: 3px solid #F6C667;
+    border-bottom: 3px solid #415F77;
+    border-left: 3px solid #415F77;
     position: absolute;
     bottom: -31.012px;
     left: 10.5px;
@@ -137,13 +137,13 @@
 }
 .pricingTable .price-icon:before{
     border: 0px none;
-    border-right: 3px solid #F6C667;
-    border-top: 3px solid #F6C667;
+    border-right: 3px solid #415F77;
+    border-top: 3px solid #415F77;
     top: -31.012px;
 }
 .pricingTable .price-value{
     font-size: 25px;
-    color: #F6C667;
+    color: #415F77;
     position: absolute;
     top: -15px;
     left: 41%;
@@ -155,7 +155,7 @@
 }
 .pricingTable .heading{
     font-size: 17px;
-    color: #F6C667;
+    color: #415F77;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 15px 0;
@@ -177,7 +177,7 @@
 }
 .pricingTable .pricingContent ul li i{
     margin: 0 10px 0 0;
-    color: #F6C667;
+    color: #415F77;
 }
 .pricingTable .pricingTable-signup{
     padding: 30px 0;
@@ -185,17 +185,17 @@
 .pricingTable .pricingTable-signup a{
     display: inline-block;
     font-size: 14px;
-    color: #F6C667;
+    color: #415F77;
     background-color: #fff;
     border-radius: 4px;
     padding: 10px 25px;
-    border: 2px solid #F6C667;
+    border: 2px solid #415F77;
     transition: all 0.4s ease 0s;
 }
 .pricingTable .pricingTable-signup a:hover{
-    background: #F6C667;
+    background: #415F77;
     color: #fff;
-    border-color: #F6C667;
+    border-color: #415F77;
     text-decoration: none;
 }
 .pricingTable .pricingTable-signup a i{
