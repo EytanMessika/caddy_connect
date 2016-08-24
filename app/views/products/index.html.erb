@@ -1,5 +1,18 @@
 <div class="wrapper">
   <aside class="sidebar">
+  <div class="user_sidebar" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <%= image_tag "https://pbs.twimg.com/profile_images/543163817497096192/quCE6m_M.jpeg", class: "avatar-big cursor" %>
+          <ul>
+          <li class="side_user_name">
+            <p>Manou Febvret</p>
+          </li>
+          </ul>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <div class="well">
+            ...
+          </div>
+        </div>
     <ul class="sidebar-list">
       <li class="sidebar-item sb-active"><i class="fa fa-home"></i></li>
       <li class="sidebar-item"><i class="fa fa-bar-chart"></i></li>
@@ -26,12 +39,15 @@
                         </ul>
                     </div><!-- /  CONTENT BOX-->
                     <div class="pricingTable-signup">
-
-                    <button type="button", class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                    <% if product.tracking_number.empty? %>
+                    <button type="button", class="btn btn-success" data-toggle="modal" data-target="#product-modal-<%= product.id %>">
                       Suivre mon colis
                     </button>
+                    <% else %>
+                    Status
+                    <% end %>
                       <!-- Modal -->
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal fade" id="product-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -41,11 +57,11 @@
                           <div class="modal-body">
                            <p>Entrez votre numéro de suivis</p>
                           </div>
-                            <div class="form-actions">
-                              <button type="button" class="btn btn-success">Ajouter</button>
-                              <br>
-                              <br>
-                              <br>
+                          <%= simple_form_for(product) do |f| %>
+                            <div class="form-inputs">
+                              <%= f.input :tracking_number, placeholder: '6287VB3'%>
+                              <%= f.button :submit, 'Ajouter', class: 'btn btn-success' %>
+                              <% end %>
                             </div>
                           </div>
                         </div>

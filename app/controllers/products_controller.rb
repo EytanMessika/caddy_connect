@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
+    redirect_to :back
   end
 
   def edit
