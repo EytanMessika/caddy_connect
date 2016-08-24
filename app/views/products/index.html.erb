@@ -2,10 +2,59 @@
   <aside class="sidebar">
     <ul class="sidebar-list">
       <li class="sidebar-item sb-active"><i class="fa fa-home"></i></li>
-      <li class="sidebar-item"><i class="fa fa-th"></i></li>
-      <li class="sidebar-item"><i class="fa fa-picture-o"></i></li>
-      <li class="sidebar-item"><i class="fa fa-bell-o"></i></li>
+      <li class="sidebar-item"><i class="fa fa-bar-chart"></i></li>
       <li class="sidebar-item"><i class="fa fa-bolt"></i></li>
+      <li class="sidebar-item"><i class="fa fa-user"></i></li>    
     </ul>
   </aside>
-</div>
+<% @products.each do |product| %>
+  <div class="col-md-3 col-sm-6">
+                <div class="pricingTable">
+                    <div class="pricingTable-header">
+                        <span class="price-icon"></span>
+                        <span class="price-value"><%= product.price %>€</span>
+                        <h3 class="heading"><%= product.name %></h3>
+                    </div>
+                    <div class="pricingContent">
+                        <ul>
+                            <li><i class="fa fa-truck"></i><%= product.brand %></li>
+                            <li><i class="fa fa-info-circle"></i><%= product.description %></li>
+                            <li><i class="fa fa-shopping-basket"></i><%= product.ecommerce %>
+                            </li>
+                            <li><i class="fa fa-tasks"></i>En Transit
+                            </li>
+                        </ul>
+                    </div><!-- /  CONTENT BOX-->
+                    <div class="pricingTable-signup">
+
+                    <button type="button", class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                      Suivre mon colis
+                    </button>
+                      <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Suivre mon colis</h4>
+                          </div>
+                          <div class="modal-body">
+                           <p>Entrez votre numéro de suivis</p>
+                          </div>
+                            <div class="form-actions">
+                              <button type="button" class="btn btn-success">Ajouter</button>
+                              <br>
+                              <br>
+                              <br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
+
+
