@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     @products = current_user.products
   end
 
-  private
+    private
 
   def set_product
     @product = Product.find(params[:id])
