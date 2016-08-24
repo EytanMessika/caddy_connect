@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
- before_action :set_product, only: [ :edit, :update]
+  before_action :set_product, only: [ :edit, :update]
+
   def index
     @products = current_user.products
     #//GMAIL SCRAPPING//
@@ -8,7 +9,7 @@ class ProductsController < ApplicationController
     # mail = client.get_mail("156b27dc2b090088")
     # pp client.get_body(mail)
     # ////////////
-  end 
+  end
 
   def create
     @product = Product.new(product_params)
@@ -31,7 +32,11 @@ class ProductsController < ApplicationController
   def edit
   end
 
-    private
+  def stats
+    @products = current_user.products
+  end
+
+  private
 
   def set_product
     @product = Product.find(params[:id])

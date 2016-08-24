@@ -10,7 +10,7 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'redis'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'google-api-client', '0.8.2', require: 'google/api_client'  
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -19,11 +19,12 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem "chartkick"
 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  
+
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'

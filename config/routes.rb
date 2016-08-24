@@ -4,5 +4,6 @@ Rails.application.routes.draw do
      authenticated :user do
        root 'products#index', as: :authenticated_root
      end
+     get '/stats', to: 'products#stats'
      root "pages#home"
 end
