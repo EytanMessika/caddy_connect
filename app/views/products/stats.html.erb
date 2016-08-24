@@ -25,3 +25,7 @@
      <th><%= @products.map{ |p| p.price.to_i }.sum %></th>
   </tbody>
 </table>
+
+<% content_for :after_js do %>
+  <%= pie_chart Product.group(:ecommerce).count %>
+<% end %>
