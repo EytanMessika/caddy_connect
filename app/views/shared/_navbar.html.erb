@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
 
@@ -53,7 +53,7 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "Sign up", new_user_registration_path %>
 
