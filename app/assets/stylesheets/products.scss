@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300);
 
 $grey      : #e6e6e6;
-$midnight  : #1f282f;
+$midnight  : #415F77;
 $white     : #ffffff;
 $nav-color : $white;
 $blue      : #2196f3;
@@ -30,14 +30,14 @@ body {
 
 .wrapper {
   display: flex;
-  background-color: #D9EDF7;
+  background-color: #ECF0F1;
 
   flex-grow: 1;
 }
 
 
 .sidebar {
-  min-width: 120px;
+  min-width: 200px;
   background-color: $midnight;
 }
 
@@ -67,10 +67,25 @@ body {
 }
 
 
-
 .navigation {
   display: flex;
 
   align-items: center;
 }
+
+.user_sidebar{
+  display: flex;
+  margin-top: 30px;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  border-bottom: #3A3D46 1px dashed;
+}
+
+.side_user_name p{
+margin-top: 15px;
+color: white;
+font-weight: bolder;
+}
+
 
