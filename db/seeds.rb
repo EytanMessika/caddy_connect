@@ -234,3 +234,4 @@ Product.create!(name: "Velo", price: "150", description: "Velo tout terrain", br
 Product.create!(name: "Iphone 6", price: "450", description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, photo: "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/gray/iphone6-gray-select-2014_GEO_EMEA_LANG_FR?wid=470&hei=556&fmt=png-alpha&qlt=95&.v=fuHkH2")
 Product.create!(name: "Jeans Slim", price: "66", description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-04-13", user: user_test, photo: "http://static.kiabi.com/images/jean-slim-super-taille-haute---longueur-us32-gris-femme-tw098_1_lpr1.jpg")
 
+

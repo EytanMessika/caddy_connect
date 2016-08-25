@@ -8,4 +8,5 @@ Rails.application.routes.draw do
      get "/stats", to: "products#stats"
      get "stats/graph", to: "products#graph"
      root "pages#home"
+     post "/webhooks" => "webhooks#delivery_status"
 end
