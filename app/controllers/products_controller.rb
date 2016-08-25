@@ -43,7 +43,18 @@ class ProductsController < ApplicationController
   end
 
   def stats
-    @products = current_user.products
+    if params[:interval] == 'week'
+      @products = current_user.products.select { |product| product.purchase_date.cweek == Date.today.cweek }
+    elsif params[:interval] == 'month'
+      @products = current_user.products.select { |product| product.purchase_date.mon == Date.today.mon }
+    elsif params[:interval] == 'year'
+      @products = current_user.products.select { |product| product.purchase_date.cwyear == Date.today.cwyear }
+    else
+      @products = current_user.products
+    end
+  end
+
+  def graph
   end
 
     private
