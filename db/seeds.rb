@@ -8,4 +8,5 @@ Product.create!(name: "Poele", price: "10", description: "poele a steak", brand:
 Product.create!(name: "Velo", price: "150", description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "21-08-25", user: user_test, photo: "http://www.velo-cycle-vtt.com/images/mtb-monster-xt.jpg")
 Product.create!(name: "Iphone 6", price: "450", description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "21-08-30", user: user_test, photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
 Product.create!(name: "Jeans Slim", price: "66", description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "21-08-05", user: user_test, photo: "http://i2.kym-cdn.com/entries/icons/original/000/019/677/5Pikachu.png")
+Product.create!(name: "Jeans Large", price: "66", description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "XY526859489FR", purchase_date: "21-08-05", user: user_test, photo: "http://i2.kym-cdn.com/entries/icons/original/000/019/677/5Pikachu.png")
 

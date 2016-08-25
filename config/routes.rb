@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :products, only: [:update]
   authenticated :user do
-   root 'products#index', as: :authenticated_root
+  root 'products#index', as: :authenticated_root
   end
   root "pages#home"
+  post "/webhooks" => "webhooks#delivery_status"
 end
