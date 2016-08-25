@@ -1,32 +1,28 @@
 <div class="stats-wrapper">
-  <h1>Statistiques</h1>
-  <table cellpadding="0" cellspacing="0" border="0">
-    <thead class="tbl-header">
-      <tr>
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Date</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-  </table>
-  <table cellpadding="0" cellspacing="0" border="0">
-    <tbody class="tbl-content">
-      <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.brand %></td>
-        <td><%= product.purchase_date %></td>
-        <td><%= product.price %></td>
-      </tr>
-      <% end %>
-       <th>TOTAL PRICE</th>
-       <th></th>
-       <th></th>
-       <th><%= @products.map{ |p| p.price.to_i }.sum %></th>
-    </tbody>
-  </table>
-  <% content_for :after_js do %>
-    <%= pie_chart Product.group(:ecommerce).count, colors: ["#3498db", "#FF9900"] %>
-  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+        <div class="progress round">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:25%">
+            25% Complete
+          </div>
+        </div>
+        <div class="progress round">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:50%">
+            50% Complete
+          </div>
+        </div>
+        <div class="progress round">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:75%">
+            75% Complete
+          </div>
+        </div>
+        <div class="progress round">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width:100%">
+            100% Complete
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
