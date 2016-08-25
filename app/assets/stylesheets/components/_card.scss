@@ -1,221 +1,103 @@
-.product {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 3px;
-  transition: all 0.15s ease;
-}
-
-/* Body design */
-.product-body {
-  flex: 1 1 auto;
-}
-.product-body h3 {
-  font-weight: bold;
-  font-size: 23px;
-  margin-top: 0;
-}
-.product-body p {
-  font-weight: lighter;
-  color: #999999;
-  margin-bottom: 0;
-}
-
-/* Product image */
-.product-image {
-  border-radius: 10px;
-  margin-right: 20px;
-  width: 175px;
-}
-
-/* Upvote design */
-.product-upvote {
-  padding-right: 20px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
-}
-.product-count {
-  margin: 2px 0 0;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
+#card {
+  background: #fff;
+  width: 80%;
+  height: 350px;
+  margin: 2em auto;
+  padding-bottom: 1em;
   border-radius: 2px;
-  margin: auto;
+  -webkit-box-shadow: 0px 3px 13px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 13px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 13px 0px rgba(0, 0, 0, 0.24);
 }
 
-/* Controls design */
-.product-controls {
-  display: flex;
-  align-items: center;
+#userImage {
+  position: relative;
+  top: 1em;
+  height: 100px;
+  display: block;
   text-align: center;
-  margin: 0px;
+  margin: 1em auto;
+  max-width: 100px;
+  border-radius: 100%;
+
 }
-.product-controls a {
-  padding: 0 20px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.product-controls a:hover {
-  color: #D3473C !important
-}
-.product-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
+#badge-card {
+  background: #3FC1C9;
+  color: #fff;
+  margin: auto;
+  padding: 5px 7px;
+  position: relative;
+  top: -20px;
+  left: 56%;
+  font-size: 12px;
+  border-radius: 100px;
 }
 
-/* Hover effects */
-.product:hover {
-  background: #f7f7fa;
-  cursor: pointer;
-}
-.product-upvote:hover {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product:hover .product-upvote { transform: scale(1.2) }
-.product:hover .product-controls-hidden a { color: #E6E6E6 }
-.product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
-
-.truck-card {
-    width: 33.33333333%;
-    background-color: #2B3442;
-    text-align: center;
-    margin-top: 53px;
-    padding: 20px;
-}
-.pricingTable{
-    text-align: center;
-    background: #fff;
-    border-radius: 5px;
-    margin-top: 60px;
-}
-.pricingTable .pricingTable-header{
-    position: relative;
-    border-bottom: 1px solid #e3e0e0;
-    border-radius: 5px 5px 0 0;
-    padding: 45px 0 0;
-    transition: all 0.3s ease 0s;
-}
-.pricingTable:hover .pricingTable-header{
-    background-color: #415F77;
-}
-.pricingTable .price-icon{
-    display: block;
-    width: 87px;
-    height: 48px;
-    background: #fff;
-    border-left: 2px solid #415F77;
-    border-right: 2px solid #415F77;
-    position: absolute;
-    top: -20px;
-    left: 35%;
-}
-.pricingTable .price-icon:after,
-.pricingTable .price-icon:before{
-    content: "";
-    width: 61.5px;
-    height: 61.5px;
-    background: #fff;
-    border-bottom: 3px solid #415F77;
-    border-left: 3px solid #415F77;
-    position: absolute;
-    bottom: -31.012px;
-    left: 10.5px;
-    transform: scaleY(0.5774) rotate(-45deg);
-    border-radius: 0 7px;
-}
-.pricingTable .price-icon:before{
-    border: 0px none;
-    border-right: 3px solid #415F77;
-    border-top: 3px solid #415F77;
-    top: -31.012px;
-}
-.pricingTable .price-value{
-    font-size: 25px;
-    color: #415F77;
-    position: absolute;
-    top: -15px;
-    left: 41%;
-}
-.pricingTable .month{
-    display: block;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-.pricingTable .heading{
-    font-size: 17px;
-    color: #415F77;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 15px 0;
-    transition: all 0.4s ease 0s;
-}
-.pricingTable:hover .heading{
-    color: #fff;
-}
-.pricingTable .pricingContent ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.pricingTable .pricingContent ul li{
-    font-size: 14px;
-    color: #878787;
-    padding: 13px 0;
-    border-bottom: 1px solid #dfeaf0;
-}
-.pricingTable .pricingContent ul li i{
-    margin: 0 10px 0 0;
-    color: #415F77;
-}
-.pricingTable .pricingTable-signup{
-    padding: 30px 0;
-}
-.pricingTable .pricingTable-signup a{
-    display: inline-block;
-    font-size: 14px;
-    color: #415F77;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 10px 25px;
-    border: 2px solid #415F77;
-    transition: all 0.4s ease 0s;
-}
-.pricingTable .pricingTable-signup a:hover{
-    background: #415F77;
-    color: #fff;
-    border-color: #415F77;
-    text-decoration: none;
-}
-.pricingTable .pricingTable-signup a i{
-    margin-right: 5px;
-}
-@media screen and (max-width: 990px){
-    .pricingTable{ margin-bottom: 20px; }
-    .pricingTable .price-icon{ left: 39%; }
-    .pricingTable .price-value{ left: 44%;}
-}
-@media screen and (max-width: 767px){
-    .pricingTable .price-icon{ left: 44%; }
-    .pricingTable .price-value{ left: 46%;}
-}
-@media screen and (max-width: 480px){
-    .pricingTable .price-icon{ left: 40%; }
-    .pricingTable .price-value{ left: 44%;}
-}
-@media screen and (max-width: 360px){
-    .pricingTable .price-icon{ left: 37%; }
-    .pricingTable .price-value{ left: 42%;}
+#playerName {
+  position: relative;
+  top: -15px;
+  text-align: center;
+  font-size: 20px;
+  color: #555;
+  font-weight: bolder;
 }
 
+#states {
+  width: 85%;
+  margin: 1em auto;
+  font-weight: 300;
+}
+
+.wrapper-dashboard {
+margin-top : 20px;
+}
+
+
+.wrapper-dashboard ul {
+  padding-bottom: 1em;
+  list-style: none;
+}
+
+.wrapper-dashboard ul li {
+  color: #999;
+  margin-bottom: 8px;
+  padding: 1px 0px 8px 0px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+
+#info {
+  position: relative;
+  float: left;
+  margin-left: 0;
+  text-align: left;
+}
+
+#values {
+  position: relative;
+  text-align: right;
+}
+
+#contactBtn {
+  position: relative;
+  background: #2ecc71;
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: .5em;
+  width: 150px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+#contactBtn:hover {
+  background: #27ae60;
+  color: #fff;
+}
+
+.small-margin-card{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
