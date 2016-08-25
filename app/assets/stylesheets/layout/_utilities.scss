@@ -3,11 +3,28 @@
  * These are examples of utilities classes
  * Feel free to change them and create your own
  * ------------------------------------- */
+// Wrappers
+.wrapper {
+  min-height: calc(100vh - 70px);
+  // background-color: $background-color;
+}
 
 // Paddings
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
+}
+.padded-s {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.small-padded{
+  padding-top: 10px;
+}
+
+.small-padded li{
+  padding-top: 10px;
 }
 
 // Backgrounds
