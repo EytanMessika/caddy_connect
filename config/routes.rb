@@ -6,5 +6,6 @@ Rails.application.routes.draw do
        root 'products#index', as: :authenticated_root
      end
      get "/stats", to: "products#stats"
+     get "stats/graph", to: "products#graph"
      root "pages#home"
 end

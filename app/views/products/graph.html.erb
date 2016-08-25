@@ -1,0 +1,52 @@
+
+<div class="wrapper">
+  <aside class="sidebar">
+  <div class="user_sidebar" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <%= image_tag "https://pbs.twimg.com/profile_images/543163817497096192/quCE6m_M.jpeg", class: "avatar-big cursor" %>
+          <ul>
+          <li class="side_user_name">
+            <p>Manou Febvret</p>
+          </li>
+          </ul>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <div class="well">
+          <ul><li>
+            <%= link_to destroy_user_session_path, :method => :delete  do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+            </li></ul>
+          </div>
+        </div>
+    <ul class="sidebar-list">
+      <li class="sidebar-item sb-active">
+        <%= link_to root_path do %>
+        <i class="fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to stats_path do %>
+        <i class="fa fa-bar-chart"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to "#" do %>
+        <i class="fa fa-bolt"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to "#" do %>
+        <i class="fa fa-user"></i>
+        <% end %>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<div>
+<% content_for :after_js do %>
+    <%= pie_chart Product.group(:ecommerce).count, colors: ["#3498db", "#FF9900"] %>
+  <% end %>
+</div>
+
+

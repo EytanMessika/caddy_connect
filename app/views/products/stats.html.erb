@@ -1,32 +1,91 @@
-<div class="stats-wrapper">
-  <h1>Statistiques</h1>
-  <table cellpadding="0" cellspacing="0" border="0">
-    <thead class="tbl-header">
-      <tr>
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Date</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-  </table>
-  <table cellpadding="0" cellspacing="0" border="0">
-    <tbody class="tbl-content">
-      <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.brand %></td>
-        <td><%= product.purchase_date %></td>
-        <td><%= product.price %></td>
-      </tr>
-      <% end %>
-       <th>TOTAL PRICE</th>
-       <th></th>
-       <th></th>
-       <th><%= @products.map{ |p| p.price.to_i }.sum %></th>
-    </tbody>
-  </table>
-  <% content_for :after_js do %>
-    <%= pie_chart Product.group(:ecommerce).count, colors: ["#3498db", "#FF9900"] %>
-  <% end %>
+<div class="wrapper">
+  <aside class="sidebar">
+  <div class="user_sidebar" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <%= image_tag "https://pbs.twimg.com/profile_images/543163817497096192/quCE6m_M.jpeg", class: "avatar-big cursor" %>
+          <ul>
+          <li class="side_user_name">
+            <p>Manou Febvret</p>
+          </li>
+          </ul>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <div class="well">
+          <ul><li>
+            <%= link_to destroy_user_session_path, :method => :delete  do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+            </li></ul>
+          </div>
+        </div>
+    <ul class="sidebar-list">
+      <li class="sidebar-item sb-active">
+        <%= link_to root_path do %>
+        <i class="fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to stats_path do %>
+        <i class="fa fa-bar-chart"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to "#" do %>
+        <i class="fa fa-bolt"></i>
+        <% end %>
+      </li>
+      <li class="sidebar-item">
+        <%= link_to "#" do %>
+        <i class="fa fa-user"></i>
+        <% end %>
+      </li>
+    </ul>
+  </aside>
+
+<div class="col-md-12 col-sm-6">
+  <div class="stats-wrapper">
+    <h1>Statistiques :
+      <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Time
+              <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Anytime', stats_path, class: "c-date" %></li>
+                <li><%= link_to 'This week', stats_path(interval: 'week'), class: "c-date" %></li>
+                <li><%= link_to 'This month', stats_path(interval: 'month'), class: "c-date" %></li>
+                <li><%= link_to 'This year', stats_path(interval: 'year'), class: "c-date" %></li>
+              </ul>
+          </div>
+        </div>
+    </h1>
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead class="tbl-header">
+        <tr>
+          <th>Products</th>
+          <th>Brand</th>
+          <th>Date</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody class="tbl-content">
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.brand %></td>
+          <td><%= product.purchase_date %></td>
+          <td><%= product.price %></td>
+        </tr>
+        <% end %>
+         <th>TOTAL PRICE</th>
+         <th></th>
+         <th></th>
+         <th><%= @products.map{ |product| product.price.to_i }.sum %></th>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+
+
