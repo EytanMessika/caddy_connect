@@ -60,7 +60,7 @@
     margin: -20px 0 0 -6px;
     display: inline-block;
     font-size: 16px;
-    color: #2C3947;
+    color: #3FC1C9;
   }
   a {
     margin: 0;
@@ -110,12 +110,14 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .sidebar-nav li {
     text-indent: 10px;
     line-height: 40px;
-    font-size: 13.5px;
+    font-size: 17px;
     border: 0px;
     color: #ECF0F1;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sidebar-nav li a {
@@ -128,7 +130,7 @@
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #ECF0F1;
-    background: rgba(255,255,255,0.2);
+    background: #3FC1C9;
 }
 
 .sidebar-nav li a:active {
@@ -136,7 +138,7 @@
   }
 .sidebar-nav li a:focus {
     text-decoration: none;
-    color: rgba(255,255,255,0.2);
+    color: white;
 }
 
 .sidebar-nav > .sidebar-brand {

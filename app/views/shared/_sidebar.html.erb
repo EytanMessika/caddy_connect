@@ -6,15 +6,21 @@
         <i class="fa fa-bars"></i>
       </a>
     </li>
+    <div class="small-padded">
     <li>
-        <i class="fa fa-table icon" aria-hidden="true"></i> Dashboard
+        <%= link_to root_path do %>
+        <i class="fa fa-tachometer" aria-hidden="true"> </i> Dashboard
+        <% end %>
       </li>
     <li>
-        <i class="fa fa-ticket icon" aria-hidden="true"></i> Statistiques
+        <%= link_to stats_path do %>
+        <i class="fa fa-bar-chart" aria-hidden="true"> </i> Statistiques
+        <% end %>
       </li>
     <li>
-        <i class="fa fa-tasks icon" aria-hidden="true"></i> Aides
+        <i class="fa fa-bolt" aria-hidden="true"></i> Aides
       </li>
+      </div>
   </ul>
 </div>
 <a href="menu-toggle" class="hidden menu-toggle show">
