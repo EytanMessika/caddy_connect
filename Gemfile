@@ -19,6 +19,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem "chartkick"
 gem "aftership", "~> 4.3.1"
 
 group :development, :test do

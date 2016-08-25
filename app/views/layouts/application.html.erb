@@ -9,9 +9,22 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-  <!-- navbar -->
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar-dashboard' %>
+      <div id="wrapper">
         <%= render 'shared/flashes' %>
-    <%= yield %>
+        <%= render 'shared/sidebar' %>
+        <%= yield %>
+      </div>
+    <% else %>
+    <%= render 'shared/navbar' %>
+      <div id="wrapper-home">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+    <% end %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://www.google.com/jsapi" %>
+    <%= yield :after_js %>
   </body>
 </html>

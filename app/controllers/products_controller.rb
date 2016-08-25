@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
- before_action :set_product, only: [ :edit, :update]
+  before_action :set_product, only: [ :edit, :update]
+
   def index
     @products = current_user.products
     #//GMAIL SCRAPPING//
@@ -41,7 +42,23 @@ class ProductsController < ApplicationController
   def edit
   end
 
-private
+
+  private
+
+  def stats
+    if params[:interval] == 'week'
+      @products = current_user.products.select { |product| product.purchase_date.cweek == Date.today.cweek }
+    elsif params[:interval] == 'month'
+      @products = current_user.products.select { |product| product.purchase_date.mon == Date.today.mon }
+    elsif params[:interval] == 'year'
+      @products = current_user.products.select { |product| product.purchase_date.cwyear == Date.today.cwyear }
+    else
+      @products = current_user.products
+    end
+  end
+
+  def graph
+  end
 
   def set_product
     @product = Product.find(params[:id])
