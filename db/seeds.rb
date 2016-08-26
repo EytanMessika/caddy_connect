@@ -220,8 +220,8 @@ price_td   = text_td.next_element
 full_name = text_td.search("a")[0].text.strip
 name = full_name.split.first(3).join(" ")
 
-price = price_td.text.strip
-
+full_price = price_td.text.strip
+ price = (full_price.scan(/[-+]?[0-9]*\,?[0-9]/).join("")).gsub(',', '.').to_f
 
 Product.destroy_all
 User.destroy_all

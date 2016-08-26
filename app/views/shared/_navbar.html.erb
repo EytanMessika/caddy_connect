@@ -7,14 +7,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -51,12 +43,10 @@
       </div>
 
     <% else %>
-
+      <%= link_to "Connexion",
+       user_google_oauth2_omniauth_authorize_path, class: "navbar-wagon-item google-button-border" %>
       <!-- Login text link -->
       <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <%= link_to "Sign up", new_user_registration_path %>
-
     <% end %>
 
     
