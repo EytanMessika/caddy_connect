@@ -26,6 +26,7 @@ class User < ApplicationRecord
           email: data["email"],
           uid: access_token.uid ,
           password: Devise.friendly_token[0,20],
+          photo: data.image
         )
       end
    end
