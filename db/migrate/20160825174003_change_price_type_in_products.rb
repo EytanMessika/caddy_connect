@@ -1,5 +1,5 @@
 class ChangePriceTypeInProducts < ActiveRecord::Migration[5.0]
   def change
-    change_column :products, :price, :float
+    execute "ALTER TABLE products ALTER COLUMN price TYPE float USING price::double precision;"
   end
 end
