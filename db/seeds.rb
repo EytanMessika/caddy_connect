@@ -228,8 +228,8 @@ user_test = User.create!(email:"test@caddyconnect.fr", password:"123456")
 # user_test = User.last
 
 
-Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-15", user: user_test, category: "Cuisine", photo: "http://i2.cdscdn.com/pdt2/7/7/1/1/300x300/auc6922073466771/rw/apple-iphone-6-64gb-gris.jpg")
-Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Sport", photo: "http://www.velo-cycle-vtt.com/images/mtb-monster-xt.jpg")
+Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-15", user: user_test, category: "Cuisine", photo: photo)
+Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Sport", photo: "http://www.destock-cycle.fr/Files/89440/Img/08/Velo-GIANT-Propel-Advanced-SL-2-Pro-Blancx800.jpg")
 Product.create!(name: "Iphone 6", price: 459, description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
 Product.create!(name: "Jeans Slim", price: 66, description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Vetement", photo: "https://www.mode-destock.com/5295-thickbox/jeans-levis-501-brut.jpg")
 Product.create!(name: "Top Bleu", price: 52, description: "Top bleu taille M", brand: "Sandro", ecommerce: "Sandro", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Vetement", photo: "http://i2.cdscdn.com/pdt2/5/5/8/1/700x700/mp00308558/rw/top-en-dentelle-bleu-marine.jpg")
