@@ -14,6 +14,23 @@ background-color: #E2EBF2;
   // background-color: $background-color;
 }
 
+  a:focus {
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+  input:focus {
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+
+input:active {
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+
 // Paddings
 .padded {
   padding-top: 5em;

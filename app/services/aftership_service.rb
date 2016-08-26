@@ -15,6 +15,7 @@ class AftershipService
 
   def get_tracking_status(product)
     tracking_number = product.tracking_number
+    AfterShip::V4::Tracking.create(tracking_number)
     trackings_infos = AfterShip::V4::Courier.detect(tracking_number: tracking_number)["data"]["couriers"]
 
 
