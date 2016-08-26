@@ -46,10 +46,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 <!-- progress bar -->
 <!-- <div class="stats-wrapper">
   <div class="container">
@@ -80,3 +76,17 @@
   </div>
 </div>
  -->
+<div>
+<% content_for :after_js do %>
+  <%= line_chart Product.group_by_week(:purchase_date).maximum(:price) %>
+<% end %>
+</div>
+
+<div>
+<% content_for :after_js do %>
+  <%= column_chart Product.group_by_month(:purchase_date).maximum(:price) %>
+<% end %>
+</div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</div>
