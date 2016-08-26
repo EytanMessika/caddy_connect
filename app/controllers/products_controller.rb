@@ -42,8 +42,9 @@ class ProductsController < ApplicationController
   def edit
   end
 
-
-  private
+  def graph
+    @products_by_category_hash = current_user.products.group_by(&:category)
+  end
 
   def stats
     if params[:interval] == 'week'
@@ -57,8 +58,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def graph
-  end
+  private
 
   def set_product
     @product = Product.find(params[:id])

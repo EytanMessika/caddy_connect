@@ -54,24 +54,8 @@
   transition: transform .12s ease-out;
 }
 
-.box_more_button {
-  border-radius: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom-color: #D7DDE5;
-  border-top-color: #D7DDE5;
-  background-color: #fff;
-}
-
-.box_more_button:after {
-    content: '\e629';
-}
-
-.box_more_content {
-  display: none;
-  font-size: .865rem;
-  line-height: 1.5;
-  padding: .75rem;
+.box_padding {
+  padding-top: 70px;
 }
 
 .stats {
