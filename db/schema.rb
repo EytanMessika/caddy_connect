@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160826093242) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "photo"
+    t.string   "category"
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
