@@ -229,6 +229,7 @@ full_price = price_td.text.strip
 user_test = User.last
 
 Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-15", user: user_test, photo: photo)
+
 Product.create!(name: "Poele", price: 10, description: "poele a steak", brand: "Tefal", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-15", user: user_test, category: "Cuisine", photo: "http://i2.cdscdn.com/pdt2/2/7/3/1/700x700/ge506273/rw/tradifonte-poele-fonte-20-cm.jpg")
 Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Sport", photo: "http://www.velo-cycle-vtt.com/images/mtb-monster-xt.jpg")
 Product.create!(name: "Iphone 6", price: 450, description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
