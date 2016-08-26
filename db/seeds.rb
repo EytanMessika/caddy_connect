@@ -2,8 +2,6 @@ mail = %{<div>
 
                         <b>From:</b> Amazon.fr &lt;<a href="mailto:confirmation-commande@amazon.fr" target="_blank">confirmation-commande@amazon.<wbr>fr</a>&gt;<br>
 
-
-
                         <b>To:</b> <a href="mailto:seb@lewagon.org" target="_blank">seb@lewagon.org</a><br>
 
 
@@ -226,12 +224,18 @@ full_price = price_td.text.strip
 Product.destroy_all
 User.destroy_all
 
-
 user_test = User.create!(email:"test@caddyconnect.fr", password:"123456")
 # user_test = User.last
+
+
 Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-15", user: user_test, photo: photo)
-Product.create!(name: "Velo", price: "150", description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, photo: "http://www.web-cycle.fr/10752-thickbox_default/Velo-GIANT-Rapid-1-2016.jpg")
-Product.create!(name: "Iphone 6", price: "450", description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, photo: "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/gray/iphone6-gray-select-2014_GEO_EMEA_LANG_FR?wid=470&hei=556&fmt=png-alpha&qlt=95&.v=fuHkH2")
-Product.create!(name: "Jeans Slim", price: "66", description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-04-13", user: user_test, photo: "http://static.kiabi.com/images/jean-slim-super-taille-haute---longueur-us32-gris-femme-tw098_1_lpr1.jpg")
 
-
+Product.create!(name: "Poele", price: 10, description: "poele a steak", brand: "Tefal", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-15", user: user_test, category: "Cuisine", photo: "http://i2.cdscdn.com/pdt2/2/7/3/1/700x700/ge506273/rw/tradifonte-poele-fonte-20-cm.jpg")
+Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Sport", photo: "http://www.velo-cycle-vtt.com/images/mtb-monster-xt.jpg")
+Product.create!(name: "Iphone 6", price: 450, description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
+Product.create!(name: "Jeans Slim", price: 66, description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Vetement", photo: "http://i2.kym-cdn.com/entries/icons/original/000/019/677/5Pikachu.png")
+Product.create!(name: "Top Bleu", price: 52, description: "Top bleu taille M", brand: "Sandro", ecommerce: "Sandro", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Vetement", photo: "http://i2.cdscdn.com/pdt2/5/5/8/1/700x700/mp00308558/rw/top-en-dentelle-bleu-marine.jpg")
+Product.create!(name: "Bilboquet", price: 10, description: "Jeu d'adresse en bois", brand: "Janod", ecommerce: "Cdiscount", tracking_number: "", purchase_date: "2016-06-02", user: user_test, category: "Jouet", photo: "https://amobois.com/28/bilboquet.jpg")
+Product.create!(name: "Ecran TV", price: 539, description: "Ecran 4K", brand: "Samsung", ecommerce: "Materiel", tracking_number: "", purchase_date: "2016-07-11", user: user_test, category: "Hi-Tech", photo: "http://www.technoconfort.com/vign460/8081p_1.jpg")
+Product.create!(name: "Rideaux", price: 45, description: "Tissu rose", brand: "Habitat", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://i2.cdscdn.com/pdt2/8/9/1/1/700x700/hm69850891/rw/rideau-home-maison-imprime-recto-verso-bleu.jpg")
+Product.create!(name: "Canapé", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")

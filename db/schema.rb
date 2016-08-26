@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160826093242) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.string   "price"
+    t.float    "price"
     t.string   "description"
     t.string   "brand"
     t.string   "ecommerce"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160826093242) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "photo"
+    t.string   "category"
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
