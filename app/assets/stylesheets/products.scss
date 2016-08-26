@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300);
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,700,900';
 
 $grey      : #e6e6e6;
 $midnight  : #415F77;
@@ -24,13 +24,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
 .wrapper {
   display: flex;
-  background-color: #ECF0F1;
 
   flex-grow: 1;
 }

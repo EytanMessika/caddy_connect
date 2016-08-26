@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
@@ -6,6 +6,14 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
 
 
     <!-- Different navigation if login or not -->
@@ -43,10 +51,12 @@
       </div>
 
     <% else %>
-      <%= link_to "Connexion",
-       user_google_oauth2_omniauth_authorize_path, class: "navbar-wagon-item google-button-border" %>
+
       <!-- Login text link -->
       <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Sign up", new_user_registration_path %>
+
     <% end %>
 
     

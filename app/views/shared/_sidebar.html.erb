@@ -1,0 +1,30 @@
+<div id="sidebar-wrapper" class="hidden-xs hidden-sm">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <h4>Menu</h4>
+      <a href="menu-toggle" class="hidden-xs hidden-sm menu-toggle">
+        <i class="fa fa-bars"></i>
+      </a>
+    </li>
+    <div class="small-padded">
+    <li>
+        <%= link_to root_path do %>
+        <i class="fa fa-tachometer" aria-hidden="true"> </i> Dashboard
+        <% end %>
+      </li>
+    <li>
+        <%= link_to stats_path do %>
+        <i class="fa fa-bar-chart" aria-hidden="true"> </i> Statistiques
+        <% end %>
+      </li>
+    <li>
+        <i class="fa fa-bolt" aria-hidden="true"></i> Aides
+      </li>
+      </div>
+  </ul>
+</div>
+<a href="menu-toggle" class="hidden menu-toggle show">
+  <div class="menu-toggle-container">
+    <h4>Menu <i class="fa fa-caret-right"></i></h4>
+  </div>
+</a>

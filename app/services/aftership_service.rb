@@ -17,12 +17,17 @@ class AftershipService
     tracking_number = product.tracking_number
     trackings_infos = AfterShip::V4::Courier.detect(tracking_number: tracking_number)["data"]["couriers"]
 
+
     if trackings_infos.any?
       courier = trackings_infos.first["slug"]
-      AfterShip::V4::Tracking.get(courier, tracking_number)["data"]["tracking"]["tag"]
+      data = AfterShip::V4::Tracking.get(courier, tracking_number)["data"]
+      if data.empty?
+        "Unknown"
+      else
+        data["tracking"]["tag"]
+      end
     else
-      raise ArgumentError, "Tracking number not correct could not find courier"
+      raise ArgumentError, "Tracking number is not correct could not find courier"
     end
   end
-
 end
