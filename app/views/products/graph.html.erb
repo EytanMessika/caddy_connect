@@ -1,2 +1,48 @@
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="wrapper">
+        <section class="wrapper_graph">
+          <div class="row box_row">
+            <% @products_by_category_hash.each do |category, products|  %>
+              <div class="column half_whole padded">
+                <article class="box box_panel text-center">
+                  <label class="box_label">
+                    <%= category %>
+                  </label>
+                  <section class="box_body">
+                    <div class="graph">
+                      <div class="txt_warn graph_data txt_serif"><%= products.map(&:price).map(&:to_i).reduce(:+) %>€</div>
+                    </div>
+                  </section>
+                  <section class="stats stats_row">
+                    <div class="stats_item half_whole">
+                      <div class="txt_faded">
+                        <label class="txt_label space_n_b">
+                          Nombre de commande:
+                        </label>
+                        <div class="txt_serif stats_item_number txt_success">
+                          <%= products.size %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="stats_item half_whole">
+                      <div class="txt_faded">
+                        <label class="txt_label space_n_b">
+                          Panier moyen:
+                        </label>
+                        <div class="txt_serif stats_item_number txt_error">
+                          <%= products.map(&:price).map(&:to_i).reduce(:+).fdiv(products.size) %>€
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </article>
+              </div>
+            <% end %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
