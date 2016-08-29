@@ -1,23 +1,62 @@
+.logo-home img {
+  position: absolute;
+  left: 90px;
+  top: 25px;
+  width: 150px;
+}
+
 .banner {
-  margin-top: -70px;
   color: white;
-  text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
+  // height: 100vh;
+  background: #E2EBF2;
   background-size: cover !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 .banner h1 {
   font-size: 35px;
   font-weight:lighter;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: #3FC1C9;
+  // text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 250px;
+  left: 90px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 41px;
+ }
 
+
+.banner-content img{
+  position: absolute;
+  right: 100px;
+  top: 120px;
+  width: 600px;
 }
-.banner p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+
+.banner-content a{
+position: absolute;
+top: 365px;
+left: 88px;
+}
+
+.divider{
+  height: 30px;
+  position: absolute;
+  right: 120px;
+  top: 20px;
+  border-left: 1px solid #3FC1C9;
+}
+
+.banner-connect a{
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  color: #3FC1C9;
+  text-decoration: none;
+  font-size: 18px
+}
+
+.banner-features {
+  background: #3FC1C9;
+  height: 400px;
 }
