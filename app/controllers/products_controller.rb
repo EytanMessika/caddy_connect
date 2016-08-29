@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [ :edit, :update]
 
   def index
-    @products = current_user.products
-    #//GMAIL SCRAPPING//
+    @products = current_user.products.order(created_at: :desc)
+    # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
     # mail = client.get_mail("156b27dc2b090088")
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   end
 
   def graph
-    @products_by_category_hash = current_user.products.group_by(&:category)
+    
   end
   def stats
     if params[:interval] == 'week'
@@ -55,6 +55,7 @@ class ProductsController < ApplicationController
     else
       @products = current_user.products
     end
+    @products_by_category_hash = current_user.products.group_by(&:category)
   end
 
   private
