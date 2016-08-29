@@ -1,4 +1,7 @@
 <div class="wrapper-dashboard">
+  <div class="header-title text-center">
+    <h2>Statistiques</h2>
+  </div>
   <h1 class="heading-1">Vue Globale</h1>
   <div class="divider-1"> <span></span></div>
   <div class="tri">
@@ -54,10 +57,10 @@
           Période <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><%= link_to 'Tout', stats_path, class: "c-date" %></li>
-          <li><%= link_to 'Cette semaine', stats_path(interval: 'week'), class: "c-date" %></li>
-          <li><%= link_to 'Ce mois-ci', stats_path(interval: 'month'), class: "c-date" %></li>
-          <li><%= link_to 'Cette année', stats_path(interval: 'year'), class: "c-date" %></li>
+          <li><%= link_to 'Tout', stats_path %></li>
+          <li><%= link_to 'Cette semaine', stats_path(interval: 'week')%></li>
+          <li><%= link_to 'Ce mois-ci', stats_path(interval: 'month')%></li>
+          <li><%= link_to 'Cette année', stats_path(interval: 'year')%></li>
         </ul>
       </div>
       </div>

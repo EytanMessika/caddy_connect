@@ -61,31 +61,6 @@
 }
 
 
-/* follow me template */
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #F50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
-}
-
 #listed-filter {
   text-align: center;
 }
@@ -187,7 +162,7 @@ font-size: 15px;
 }
 
 .heading-1{
-  margin-top: 112px;
+  margin-top: 0px;
   margin-left: 20px;
   font-size: 1.5em;
   letter-spacing: 0.08em;
@@ -221,4 +196,8 @@ font-size: 15px;
     width: 50px;
     height: 1px;
     background-color: #3FC1C9;
+}
+
+.header-title{
+  color: #3FC1C9;
 }
