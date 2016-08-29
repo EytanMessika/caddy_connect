@@ -1,32 +1,3 @@
-// html,body {
-//   height:100%;
-//   margin:0;padding:0;
-// }
-
-// .container-fluid,.row {
-//   height:100%;
-//   background-color:grey;
-// }
-// .board-container {
-//   padding:40px;
-//   box-sizing:border-box;
-// }
-// .board {
-//   background-color:teal;
-//   height:100%;padding:40px;
-
-// }
-
-// .table-bordered {
-//   border : black, 3px, solid!important;
-//   margin-top: 35px!important;
-// }
-
-//
-//
-//
-//
-
 .stats-wrapper h1{
   font-size: 35px;
   color: #fff;
@@ -133,4 +104,117 @@
 
 .round {
   border-radius: 5px;
+}
+
+// Manou's css
+
+.wrapper-stats{
+
+}
+.stats-card{
+  background: #fff;
+  box-shadow: 0px 3px 13px 0px rgba(0, 0, 0, 0.12);
+  height: 180px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+}
+.stats-card-label{
+  font-size: 20px;
+  margin-left: 20px;
+  padding-top: 10px;
+  font-weight: bolder;
+  color: #B5C2CA;  
+}
+
+.total-cat{
+  font-size: 3rem;
+  color: #3FC1C9;
+}
+
+.total-price{
+  font-size: 3rem;
+  color: #2ECC71;
+  margin-top: 40px
+}
+
+.total-number{
+  font-size: 3rem;
+  color: #FF9900;
+  margin-top: 40px
+}
+
+.total-pannier{
+  font-size: 3rem;
+  color: #EA4335;
+  margin-top: 40px
+}
+
+.product-numbers{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+
+.stats-divider{
+  height: 50px;
+  border-left: 1px solid #3FC1C9;
+}
+
+.product-number p{
+color: #B5C2CA;
+font-size: 15px;
+}
+
+.product-number{
+color: #EA4335;
+font-size: 15px;
+}
+
+.pannier-moyen p{
+color: #B5C2CA;
+font-size: 15px;
+}
+
+.pannier-moyen {
+color: #2ECC71;
+font-size: 15px;
+}
+
+
+.heading-1 {
+    margin-left: 20px;
+    font-size: 1.5em;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    color: #3FC1C9;
+    text-shadow: 0 1px 1px #FFFFFF;
+    text-transform: uppercase;
+}
+
+.heading-2 {
+    margin-left: 20px;
+    margin-top: 24px;
+    font-size: 1.5em;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    color: #3FC1C9;
+    text-shadow: 0 1px 1px #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+.divider-1 {
+    border-bottom: 1px solid #FFF;
+    background-color: #DADADA;
+    height: 1px;
+    margin: 0.5em 20px 1.5em;
+}
+
+.divider-1 span {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: #3FC1C9;
 }
