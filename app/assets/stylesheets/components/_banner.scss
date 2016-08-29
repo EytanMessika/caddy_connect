@@ -1,23 +1,79 @@
+.logo-home img {
+  position: absolute;
+  left: 90px;
+  top: 25px;
+  width: 150px;
+}
+
 .banner {
-  margin-top: -70px;
   color: white;
-  text-align: center;
   height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #E2EBF2;
+  // background-size: cover !important;
+  // display: flex;
+  // position: relative;
 }
 .banner h1 {
   font-size: 35px;
   font-weight:lighter;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: #3FC1C9;
+  // text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 250px;
+  left: 90px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 41px;
+ }
 
+
+.banner-content img{
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  width: 600px;
 }
-.banner p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+
+.banner-content a{
+position: absolute;
+top: 365px;
+left: 88px;
+}
+
+.divider{
+  height: 35px;
+  position: absolute;
+  right: 160px;
+  top: 20px;
+  border-left: 1px solid #3FC1C9;
+}
+
+.banner-connect a{
+  position: absolute;
+  right: 40px;
+  top: 22px;
+  color: #3FC1C9;
+  text-decoration: none;
+  font-size: 20px
+}
+
+.banner-features {
+  padding-top: 140px;
+  padding-bottom: 30px;
+  background: #3FC1C9;
+  margin-top: -180px;
+}
+
+.banner-features img {
+  width: 130px;
+}
+
+.feature-tagline {
+  margin-top: 10px;
+  color: #E2EBF2;
+}
+
+.feature-tagline h3 {
+  color: #E2EBF2;
+  font-size: 18px;
+  margin-bottom: -10px;
 }
