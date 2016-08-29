@@ -7,11 +7,11 @@
 
 .banner {
   color: white;
-  // height: 100vh;
+  height: 100vh;
   background: #E2EBF2;
-  background-size: cover !important;
-  display: flex;
-  position: relative;
+  // background-size: cover !important;
+  // display: flex;
+  // position: relative;
 }
 .banner h1 {
   font-size: 35px;
@@ -29,7 +29,7 @@
 .banner-content img{
   position: absolute;
   right: 100px;
-  top: 120px;
+  top: 100px;
   width: 600px;
 }
 
@@ -40,23 +40,40 @@ left: 88px;
 }
 
 .divider{
-  height: 30px;
+  height: 35px;
   position: absolute;
-  right: 120px;
+  right: 160px;
   top: 20px;
   border-left: 1px solid #3FC1C9;
 }
 
 .banner-connect a{
   position: absolute;
-  right: 20px;
+  right: 40px;
   top: 22px;
   color: #3FC1C9;
   text-decoration: none;
-  font-size: 18px
+  font-size: 20px
 }
 
 .banner-features {
+  padding-top: 140px;
+  padding-bottom: 30px;
   background: #3FC1C9;
-  height: 400px;
+  margin-top: -180px;
+}
+
+.banner-features img {
+  width: 130px;
+}
+
+.feature-tagline {
+  margin-top: 10px;
+  color: #E2EBF2;
+}
+
+.feature-tagline h3 {
+  color: #E2EBF2;
+  font-size: 18px;
+  margin-bottom: -10px;
 }
