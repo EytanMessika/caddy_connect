@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   end
 
   def graph
-    
+
   end
   def stats
     if params[:interval] == 'week'
