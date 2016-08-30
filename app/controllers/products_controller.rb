@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
     else 
       @products = current_user.products.order(created_at: :desc)
     end
+    
+    @products = @products.where(delivery_steps: params[:delivery_steps]) unless params[:delivery_steps].blank?
+
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
