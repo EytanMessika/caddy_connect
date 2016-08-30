@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [ :edit, :update]
 
   def index
-    @products = current_user.products.order(created_at: :desc)
+    if !params[:recherche].blank?
+      @products = Product.search_product(params[:recherche]).where(user: current_user).order(created_at: :desc)
+    else 
+      @products = current_user.products.order(created_at: :desc)
+    end
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
