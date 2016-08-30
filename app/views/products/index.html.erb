@@ -8,7 +8,8 @@
           <i class="fa fa-amazon" id='badge-card'></i>
           <h4 id='playerName'><%= product.name %></h4>
           <div class="category-product">
-            <i class='fa fa-gear'></i>
+            <a href='#' type="button", data-toggle="modal" data-target="#category-modal-<%= product.id %>">
+                <i class='fa fa-gear'></i></a>
           </div>
             <div id='states'>
               <ul id='info'>
@@ -24,7 +25,11 @@
               </ul>
               <ul id='values'>
                 <li><%= product.price %> €</li>
-                <li>A préciser</li>
+                <% if product.category == nil %>
+                  <li>A préciser</li>
+                <% else %>
+                  <li><%= product.category %></li>
+                <% end %>
                 <% if product.delivery_steps == nil %>
                   <li>Aucun suivi</li>
                 <% elsif product.delivery_steps == "Pending" %>
@@ -71,6 +76,7 @@
               </div>
               <% end %>
           <% end %>
+          <!-- Tracking Modal -->
           <div class="modal fade" id="product-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-style">
@@ -93,6 +99,30 @@
               </div>
             </div>
           </div>
+          <!-- category modal -->
+          <div class="modal fade" id="category-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-style">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ajoutez votre produit à une categorie:</h4>
+                  </div>
+                  <div class="modal-body">
+                  <%= simple_form_for(product) do |f| %>
+                    <div class="form-inline">
+                      <div class="form-inputs text-center">
+                        <%= f.input :category, placeholder: 'Sports..',label: false%>
+                        <%= f.button :submit, 'Ajouter', class: 'track_button' %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
         <% end %>
