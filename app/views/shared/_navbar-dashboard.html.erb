@@ -18,13 +18,28 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-      <div class="notif">
-        <div class="badge-container">
-          <i class="fa fa-bell-o"></i>
-          <div class="badge badge-blue">1</div>
+
+      <% if @notifications.exists? %>
+        <div class="dropdown">
+          <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <div class="notif">
+              <div class="badge-container">
+                <i class="fa fa-bell-o"></i>
+                <div class="badge badge-blue"><%= @notifications.count %></div>
+              </div>
+            </div>
+          <% end %>
+          <ul class="dropdown-menu">
+            <% @notifications.each do |notification| %>
+              <div class="container">
+                <div class="row read-activity" id="notification-<%= notification.id %>" data-id="<%= notification.id %>">
+                  <li>Produit <%= notification.trackable.name %> a été créé</li>
+                  <li><hr></li>
+                </div>
+              </div>
+            <% end %>
+          </ul>
         </div>
-      </div>
       <% end %>
     <% end %>
 
@@ -48,8 +63,6 @@
       <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "Sign up", new_user_registration_path %>
-
-    <% end %>
 
 
   </div>
