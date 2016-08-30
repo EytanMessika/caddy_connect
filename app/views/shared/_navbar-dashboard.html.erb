@@ -26,12 +26,15 @@
             <div class="badge badge-blue"><%= @notifications.count %></div>
           </div>
         <% end %>
-
-          <!--         ICI DROPDOWN -->
-
-        <% @notifications.each do |notification| %>
-          Produit <%= notification.trackable.name %> a été créé
-        <% end %>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Notifications
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <% @notifications.each do |notification| %>
+              <li>Produit <%= notification.trackable.name %> a été créé</li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
 
       <!-- Profile picture and dropdown -->

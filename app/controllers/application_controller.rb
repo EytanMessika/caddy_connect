@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_unread_notifications
-    @notifications = PublicActivity::Activity.where(recipient: current_user)
-    # @notifications = PublicActivity::Activity.where(recipient: current_user, read_at: nil)
+    @notifications = PublicActivity::Activity.where(recipient: current_user, read_at: nil)
   end
 end
