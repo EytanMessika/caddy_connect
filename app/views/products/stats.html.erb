@@ -1,92 +1,95 @@
 <div class="wrapper-dashboard">
-  <div class="col-md-12 col-sm-6">
-    <div class="stats-wrapper">
-      <h1>Statistiques :
-        <div class="btn-group" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Time
-                <span class="caret"></span>
-              </button>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'Anytime', stats_path, class: "c-date" %></li>
-                  <li><%= link_to 'This week', stats_path(interval: 'week'), class: "c-date" %></li>
-                  <li><%= link_to 'This month', stats_path(interval: 'month'), class: "c-date" %></li>
-                  <li><%= link_to 'This year', stats_path(interval: 'year'), class: "c-date" %></li>
-                </ul>
-            </div>
-          </div>
-        <%= link_to 'View Details', stats_graph_path, class: "btn btn-warning" %>
-      </h1>
-      <table cellpadding="0" cellspacing="0" border="0">
-        <thead class="tbl-header">
-          <tr>
-            <th>Products</th>
-            <th>Brand</th>
-            <th>Date</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-      </table>
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tbody class="tbl-content">
-          <% @products.each do |product| %>
-          <tr>
-            <td><%= product.name %></td>
-            <td><%= product.brand %></td>
-            <td><%= product.purchase_date %></td>
-            <td><%= product.price %></td>
-          </tr>
-          <% end %>
-           <th>TOTAL PRICE</th>
-           <th></th>
-           <th></th>
-           <th><%= @products.map{ |product| product.price.to_i }.sum %></th>
-        </tbody>
-      </table>
-    </div>
+  <div class="header-title text-center">
+    <h2>Statistiques</h2>
   </div>
-</div>
-<!-- progress bar -->
-<!-- <div class="stats-wrapper">
-  <div class="container">
+  <h1 class="heading-1">Vue Globale</h1>
+  <div class="divider-1"> <span></span></div>
+  <div class="tri">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Période <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Tout', stats_path, class: "c-date" %></li>
+      <li><%= link_to 'Cette semaine', stats_path(interval: 'week'), class: "c-date" %></li>
+      <li><%= link_to 'Ce mois-ci', stats_path(interval: 'month'), class: "c-date" %></li>
+      <li><%= link_to 'Cette année', stats_path(interval: 'year'), class: "c-date" %></li>
+    </ul>
+  </div>
+  </div>
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
-        <div class="progress round">
-          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:25%">
-            25% Complete
-          </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="stats-card">
+        <div class="stats-card-label">
+          Total dépensé
         </div>
-        <div class="progress round">
-          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:50%">
-            50% Complete
-          </div>
-        </div>
-        <div class="progress round">
-          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:75%">
-            75% Complete
-          </div>
-        </div>
-        <div class="progress round">
-          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width:100%">
-            100% Complete
-          </div>
+        <div class="total-price text-center">
+          <%= @products.map(&:price).reduce(:+) %>€
         </div>
       </div>
     </div>
-  </div>
-</div>
- -->
-<div>
-<% content_for :after_js do %>
-  <%= line_chart Product.group_by_week(:purchase_date).maximum(:price) %>
-<% end %>
-</div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="stats-card">
+        <div class="stats-card-label">
+          Nombres d'articles
+        </div>
+        <div class="total-number text-center">
+          <%= @products.size %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="stats-card">
+        <div class="stats-card-label">
+            Pannier Moyen
+        </div>
+        <div class="total-pannier text-center">
+          <%= (@products.map(&:price).map(&:to_i).reduce(:+).fdiv(@products.size)).round(2) %>€
+        </div>
+      </div>
+    </div>
+      <h1 class="heading-2">Catégories</h1>
+      <div class="divider-1"> <span></span></div>
+      <div class="tri">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Période <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Tout', stats_path %></li>
+          <li><%= link_to 'Cette semaine', stats_path(interval: 'week')%></li>
+          <li><%= link_to 'Ce mois-ci', stats_path(interval: 'month')%></li>
+          <li><%= link_to 'Cette année', stats_path(interval: 'year')%></li>
+        </ul>
+      </div>
+      </div>
 
-<div>
-<% content_for :after_js do %>
-  <%= column_chart Product.group_by_month(:purchase_date).maximum(:price) %>
-<% end %>
-</div>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+      <% @products_by_category_hash.each do |category, products|  %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="stats-card">
+          <div class="stats-card-label">
+            <%= category %>
+          </div>
+          <div class="total-cat text-center">
+            <%= products.map(&:price).reduce(:+) %>€
+          </div>
+
+          <div class="product-numbers">
+            <div class="product-number text-center">
+            <p>Nombre d'articles</p>
+              <%= products.size %>
+            </div>
+            <div class="stats-divider"></div>
+            <div class="pannier-moyen text-center">
+              <p>Pannier Moyen</p>
+              <%= products.map(&:price).map(&:to_i).reduce(:+).fdiv(products.size) %>€
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end %>
+    </div>
+  </div>
 </div>
