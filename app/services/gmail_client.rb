@@ -11,8 +11,8 @@ class GmailClient
     if user.token && user.refresh_token
       @client.authorization.access_token = user.token
       @client.authorization.refresh_token = user.refresh_token
-      @client.authorization.client_id = ENV['APP_ID']
-      @client.authorization.client_secret = ENV['APP_SECRET']
+      @client.authorization.client_id = ENV['GOOGLE_APP_ID']
+      @client.authorization.client_secret = ENV['GOOGLE_APP_SECRET']
       @client.authorization.refresh!
       @service = @client.discovered_api('gmail')
     else
