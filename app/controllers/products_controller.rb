@@ -32,9 +32,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.assign_attributes(product_params)
-    status = AftershipService.new(current_user).get_tracking_status(@product)
-    @product.delivery_steps = status
+    if params[:tracking_number]
+      @product.assign_attributes(product_params)
+      status = AftershipService.new(current_user).get_tracking_status(@product)
+      @product.delivery_steps = status
+    end
     @product.save
     redirect_to :back
   end
