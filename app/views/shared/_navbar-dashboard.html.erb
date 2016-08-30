@@ -19,14 +19,26 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-      <div class="notif">
-        <div class="badge-container">
-          <i class="fa fa-bell-o"></i>
-          <div class="badge badge-blue">1</div>
+      <% if @notifications.exists? %>
+        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+          <div class="notif">
+            <div class="badge-container">
+              <i class="fa fa-bell-o"></i>
+              <div class="badge badge-blue"><%= @notifications.count %></div>
+            </div>
+          </div>
+        <% end %>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Notifications
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <% @notifications.each do |notification| %>
+              <li>Produit <%= notification.trackable.name %> a été créé</li>
+            <% end %>
+          </ul>
         </div>
-      </div>
       <% end %>
+    <% end %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
