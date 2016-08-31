@@ -1,0 +1,21 @@
+<div class="dropdown">
+  <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle", "data-toggle" => "dropdown" do %>
+    <div class="notif">
+      <div class="badge-container">
+        <i class="fa fa-bell-o"></i>
+        <div class="badge badge-blue"><%= notifications.count %></div>
+      </div>
+    </div>
+  <% end %>
+  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"">
+    <% notifications.each do |notification| %>
+      <li id="activity_link_<%= notification.id %>">
+        <%= link_to activity_path(notification), method: :patch, remote: true do %>
+          <div class="activity unread-activity" id="notification-<%= notification.id %>" data-id="<%= notification.id %>">
+            Produit <%= notification.trackable.name %> a été créé
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

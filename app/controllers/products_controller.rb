@@ -4,16 +4,16 @@ class ProductsController < ApplicationController
   def index
     if !params[:recherche].blank?
       @products = Product.search_product(params[:recherche]).where(user: current_user).order(created_at: :desc)
-    else 
+    else
       @products = current_user.products.order(created_at: :desc)
     end
+
     @delivery_steps = params[:delivery_steps]
     if @delivery_steps == 'en cours'
       @products = @products.where('delivery_steps = ? OR delivery_steps = ?', 'Pending', 'InTransit')
     else
       @products = @products.where(delivery_steps: @delivery_steps) unless @delivery_steps.blank?
     end
-
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
@@ -44,17 +44,15 @@ class ProductsController < ApplicationController
 
   def update
     @product.assign_attributes(product_params)
-    status = AftershipService.new(current_user).get_tracking_status(@product)
-    @product.delivery_steps = status
+    if params[:product][:tracking_number]
+      status = AftershipService.new(current_user).get_tracking_status(@product)
+      @product.delivery_steps = status
+    end
     @product.save
     redirect_to :back
   end
 
   def edit
-  end
-
-  def graph
-
   end
 
   def stats
@@ -71,9 +69,9 @@ class ProductsController < ApplicationController
 
     @total_amount = @products.map(&:price).map(&:to_f).reduce(0, :+)
     @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
-    
+
     if @average_cart_amount.nan?
-      @average_cart_amount = 0 
+      @average_cart_amount = 0
     end
 
     @products_by_category_hash = @products.group_by(&:category)
