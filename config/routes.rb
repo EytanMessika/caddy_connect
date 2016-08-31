@@ -9,4 +9,5 @@ Rails.application.routes.draw do
      get "stats/graph", to: "products#graph"
      root "pages#home"
      post "/webhooks" => "webhooks#delivery_status"
+     mount Facebook::Messenger::Server, at: 'bot'
 end

@@ -22,6 +22,7 @@ gem 'autoprefixer-rails'
 gem "chartkick"
 gem "aftership", "~> 4.3.1"
 gem 'groupdate'
+gem 'facebook-messenger'
 
 group :development, :test do
   gem 'binding_of_caller'
