@@ -1,85 +1,29 @@
 <div class="wrapper-dashboard">
-  <div class="header-title text-center">
-    <h2>Premium</h2>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-        <div class='pricing1 pricing animated swing'>
-          <div class='thumbnail animated  infinite'>
-            <div><i>0 €</i>
-            </div>
-          </div>
-          <div class='title', id = 'title_1'>
-            Plan Gratuit
-          </div>
-          <div class='content', id = 'content_1'>
-            <div class='sub-title'>
-              0€
-              <i>/An</i>
-            </div>
-            <ul>
-              <li>
-                <div class='fa fa-check'></div>
-                Status de livraisons
-              </li>
-              <li>
-                <div class='fa fa-check'></div>
-                Statistiques achats
-              </li>
-              <li>
-                <div class='fa fa-close'></div>
-                Retour produits sur mesure
-              </li>
-              <li>
-                <div class='fa fa-close'></div>
-                Notifications par SmS
-              </li>
-            </ul>
-          </div>
-          <div class='clickMe'>
-            Clique
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-        <div class='pricing animated swing'>
-          <div class='thumbnail animated pulse infinite'>
-            <div><i>79 €</i></div>
-          </div>
-          <div class='title', id = "title_2">
-            Plan Offensif
-          </div>
-          <div class='content', id ="content_2">
-            <div class='sub-title'>
-              79€
-              <i>/An</i>
-            </div>
-            <ul>
-              <li>
-                <div class='fa fa-check'></div>
-                Status de livraisons
-              </li>
-              <li>
-                <div class='fa fa-check'></div>
-                Statistiques achats
-              </li>
-              <li>
-                <div class='fa fa-check'></div>
-                Retour produits sur mesure
-              </li>
-              <li>
-                <div class='fa fa-check'></div>
-                Notifications par SmS
-              </li>
-            </ul>
-            <a href='#'>Payer</a>
-          </div>
-          <div class='clickMe2'>
-            Clique
-          </div>
-        </div>
-      </div>
+  <div class="text-center">
+    <div class="fb-send-to-messenger"
+      messenger_app_id="<%= ENV['FACEBOOK_APP_ID'] %>"
+      page_id="<%= ENV['FB_PAGE_ID'] %>"
+      data-ref="<%= current_user.id %>"
+      color="blue"
+      size="standard" > 
     </div>
+  
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : <%= ENV["FACEBOOK_APP_ID"] %>,
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
   </div>
 </div>
