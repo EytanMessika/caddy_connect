@@ -1,0 +1,48 @@
+<div class="wrapper-dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-premium">
+          <div class="color-title">
+            <h2>Basic</h2>
+          </div>
+            <h3><span class="uppercase">Free</span></h3>
+            <ul>
+              <li>Limited Email Support</li>
+              <li>Unlimited Data Transfer</li>
+              <li>10GB Local Storage</li>
+            </ul>
+        </div>
+        </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-premium">
+          <h2>Startup</h2>
+            <h3><sup>$</sup>79<span class="small">/mo</span></h3>
+            <ul>
+              <li>Limited Email Support</li>
+              <li>Unlimited Data Transfer</li>
+              <li>20GB Local Storage</li>
+            </ul>
+            <% if  current_user.premium == nil %>
+              <%= form_tag payments_path do %>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-image="<%= current_user.photo %>"
+                data-name="<%= current_user.name %>"
+                data-email="<%= current_user.email %>"
+                data-amount="1500"
+                data-currency="EUR"></script>
+              <% end %>
+              <% else %>
+              <p>Vous êtes déjà un membre premium</p>
+              <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

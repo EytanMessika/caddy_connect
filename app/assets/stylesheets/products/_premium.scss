@@ -1,0 +1,37 @@
+.card-premium {
+    height: 400px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover !important;
+    background: linear-gradient(to right,#238ED1 0,#2ECC71 100%);
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    text-align: center;
+}
+
+.card-premium h2 {
+  padding: 12px;
+}
+
+
+.card-premium h3 {
+  color: #F5A623;
+  margin: 40px;
+}
+
+.card-premium h3 span {
+  color: #F5A623;
+}
+
+.card-premium ul {
+  padding: 15px;
+}
+
+.card-premium form {
+  margin: 16px;
+}
+
+

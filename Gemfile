@@ -12,6 +12,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'pg_search'
+gem 'coffee-script'
+gem 'money-rails'
+gem 'stripe'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -23,6 +26,7 @@ gem 'autoprefixer-rails'
 gem "chartkick"
 gem "aftership", "~> 4.3.1"
 gem 'groupdate'
+gem 'public_activity'
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -50,8 +50,9 @@ class ProductsController < ApplicationController
   end
 
   def graph
-    
+
   end
+
   def stats
     if params[:interval] == 'week'
       @products = current_user.products.select { |product| product.purchase_date.cweek == Date.today.cweek }
