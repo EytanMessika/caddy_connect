@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :payments, only: [:create]
   resources :products, only: [:update]
+  resources :bookings, only: [:create]
   resources :activities, only: [:update]
   authenticated :user do
    root 'products#index', as: :authenticated_root

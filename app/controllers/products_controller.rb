@@ -8,8 +8,12 @@ class ProductsController < ApplicationController
       @products = current_user.products.order(created_at: :desc)
     end
 
-    @products = @products.where(delivery_steps: params[:delivery_steps]) unless params[:delivery_steps].blank?
-
+    @delivery_steps = params[:delivery_steps]
+    if @delivery_steps == 'en cours'
+      @products = @products.where('delivery_steps = ? OR delivery_steps = ?', 'Pending', 'InTransit')
+    else
+      @products = @products.where(delivery_steps: @delivery_steps) unless @delivery_steps.blank?
+    end
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
@@ -63,7 +67,7 @@ class ProductsController < ApplicationController
     end
 
 
-    @total_amount = @products.map(&:price).map(&:to_i).reduce(0, :+)
+    @total_amount = @products.map(&:price).map(&:to_f).reduce(0, :+)
     @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
 
     if @average_cart_amount.nan?

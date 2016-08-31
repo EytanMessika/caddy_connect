@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
   has_many :products , dependent: :destroy
+  has_many :bookings
   # :nullify for later, change status dependent
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
