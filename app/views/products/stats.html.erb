@@ -25,7 +25,7 @@
           Total dépensé
         </div>
         <div class="total-price text-center">
-          <%= @products.map(&:price).reduce(:+) %>€
+          <%= @total_amount %>€
         </div>
       </div>
     </div>
@@ -42,10 +42,10 @@
     <div class="col-xs-12 col-sm-4">
       <div class="stats-card">
         <div class="stats-card-label">
-            Pannier Moyen
+            Panier Moyen
         </div>
         <div class="total-pannier text-center">
-          <%= (@products.map(&:price).map(&:to_i).reduce(:+).fdiv(@products.size)).round(2) %>€
+          <%= @average_cart_amount %>€
         </div>
       </div>
     </div>
@@ -66,30 +66,36 @@
       </div>
 
 
-      <% @products_by_category_hash.each do |category, products|  %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="stats-card">
-          <div class="stats-card-label">
-            <%= category %>
-          </div>
-          <div class="total-cat text-center">
-            <%= products.map(&:price).reduce(:+) %>€
-          </div>
-
-          <div class="product-numbers">
-            <div class="product-number text-center">
-            <p>Nombre d'articles</p>
-              <%= products.size %>
+      <% if @products_by_category_hash.present? %>
+        <% @products_by_category_hash.each do |category, products|  %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="stats-card">
+            <div class="stats-card-label">
+              <%= category %>
             </div>
-            <div class="stats-divider"></div>
-            <div class="pannier-moyen text-center">
-              <p>Pannier Moyen</p>
-              <%= products.map(&:price).map(&:to_i).reduce(:+).fdiv(products.size) %>€
+            <div class="total-cat text-center">
+              <%= products.map(&:price).reduce(:+) %>€
+            </div>
+
+            <div class="product-numbers">
+              <div class="product-number text-center">
+              <p>Nombre d'articles</p>
+                <%= products.size %>
+              </div>
+              <div class="stats-divider"></div>
+              <div class="pannier-moyen text-center">
+                <p>Pannier Moyen</p>
+                <%= products.map(&:price).map(&:to_i).reduce(:+).fdiv(products.size) %>€
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <% end %>
+      <% else %>
+        <div class="aucun_resultat text-center">
+          <h5>Vous n'avez pas acheté de produit pendant cette période</h5>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

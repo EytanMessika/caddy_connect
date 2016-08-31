@@ -2,7 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [ :edit, :update]
 
   def index
-    @products = current_user.products.order(created_at: :desc)
+    if !params[:recherche].blank?
+      @products = Product.search_product(params[:recherche]).where(user: current_user).order(created_at: :desc)
+    else 
+      @products = current_user.products.order(created_at: :desc)
+    end
+    
+    @products = @products.where(delivery_steps: params[:delivery_steps]) unless params[:delivery_steps].blank?
+
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
@@ -56,7 +63,16 @@ class ProductsController < ApplicationController
     else
       @products = current_user.products
     end
-    @products_by_category_hash = current_user.products.group_by(&:category)
+
+
+    @total_amount = @products.map(&:price).map(&:to_i).reduce(0, :+)
+    @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
+    
+    if @average_cart_amount.nan?
+      @average_cart_amount = 0 
+    end
+
+    @products_by_category_hash = @products.group_by(&:category)
   end
 
   private
@@ -66,6 +82,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :ecommerce, :tracking_number, :purchase_date, :photo, :user_id)
+    params.require(:product).permit(:name, :price, :description, :brand, :ecommerce, :category, :tracking_number, :purchase_date, :photo, :user_id)
   end
 end

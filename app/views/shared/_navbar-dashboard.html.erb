@@ -8,19 +8,12 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <div class="box">
-      <div class="container-1">
-        <span class="icon"><i class="fa fa-search"></i></span>
-        <input type="search" id="search" placeholder="Rechercher..." />
-      </div>
-    </div>
-
-    <!-- Premium button -->
-    <div class="design-success">
-      <%= link_to premium_path do %>
-      <button type="button" class="btn btn">Premium</button>
-      <% end %>
-    </div>
+    <form action="/" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Rechercher" name = "recherche">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search" style = "color:#3FC1C9;"></i>
+      </button>
+    </form>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
