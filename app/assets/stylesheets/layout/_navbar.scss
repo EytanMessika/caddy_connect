@@ -88,15 +88,14 @@
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
-  border-radius: 25px;
+  color: #3FC1C9;
+  border: 1px solid #E2EBF2;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
+  border: 1px solid #3FC1C9;
 }
 
 /* Navbar dropdown menu */
@@ -130,6 +129,12 @@
   border-top: 1px solid #E6E6E6;
 }
 
+.design-success button {
+  border-radius: 18px;
+  background-color: #9BD3F2;
+  color: white;
+}
+
 .box{
   margin: 100px auto;
   width: 200px;
@@ -155,7 +160,7 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  
+
   -webkit-transition: background .55s ease;
 -moz-transition: background .55s ease;
 -ms-transition: background .55s ease;
@@ -166,20 +171,20 @@ transition: background .55s ease;
 .container-1 input#search::-webkit-input-placeholder {
    color: #65737e;
 }
- 
+
 .container-1 input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
-}
- 
-.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
-}
- 
-.container-1 input#search:-ms-input-placeholder {  
-   color: #65737e;  
+   color: #65737e;
 }
 
-.container-1 .icon{
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+
+.container-1 .icon {
   position: absolute;
   top: 50%;
   margin-left: 17px;
@@ -188,7 +193,8 @@ transition: background .55s ease;
   color: #4f5b66;
 }
 
-.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active {
     outline:none;
     background: #ffffff;
   }
+

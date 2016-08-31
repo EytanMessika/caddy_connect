@@ -1,101 +1,28 @@
 <div class="wrapper-dashboard">
   <div class="container-fluid">
     <div class="row">
-        <% @products.each do |product| %>
-      <div class="col-xs-6 col-sm-3">
-        <div id='card'>
-          <%= image_tag product.photo, id: 'userImage' %>
-          <i class="fa fa-amazon" id='badge-card'></i>
-          <h4 id='playerName'><%= product.name %></h4>
-          <div class="category-product">
-            <i class='fa fa-gear'></i>
-          </div>
-            <div id='states'>
-              <ul id='info'>
-                <li>
-                  Prix
-                </li>
-                <li>
-                  Catégorie
-                </li>
-                <li>
-                  Livraison
-                </li>
-              </ul>
-              <ul id='values'>
-                <li><%= product.price %> €</li>
-                <li>A préciser</li>
-                <% if product.delivery_steps == nil %>
-                  <li>Aucun suivi</li>
-                <% elsif product.delivery_steps == "Pending" %>
-                  <li>En attente</li>
-                <% elsif product.delivery_steps == "InTransit" %>
-                <li>En cours</li>
-                <% elsif product.delivery_steps == "Delivered" %>
-                <li>Colis reçu !</li>
-                <% end %>
-              </ul>
-            </div>
-            <% if product.tracking_number.empty? %>
-              <a href='#' id='contactBtn' type="button", data-toggle="modal" data-target="#product-modal-<%= product.id %>">
-                <i class='fa fa-paper-plane spin'></i>
-                 Suivre
-              </a>
-          <% else %>
-            <% if product.delivery_steps == "InTransit" %>
-              <div class="small-margin-card">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                    En cours
-                  </div>
-                </div>
-              </div>
-               <% elsif product.delivery_steps == "Delivered" %>
-               <div class="small-margin-card">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success active" role="progressbar" aria-valuenow="100"
-                  aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                    Reçu !
-                  </div>
-                </div>
-              </div>
-              <% elsif product.delivery_steps == "Pending" %>
-              <div class="small-margin-card">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10"
-                  aria-valuemin="0" aria-valuemax="100" style="width:10%">
-                    En attente
-                  </div>
-                </div>
-              </div>
-              <% end %>
-          <% end %>
-          <div class="modal fade" id="product-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-style">
-                <div class="modal-content">
-                  <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Suivre votre colis</h4>
-                  </div>
-                  <div class="modal-body">
-                  <%= simple_form_for(product) do |f| %>
-                    <div class="form-inline">
-                      <div class="form-inputs text-center">
-                        <%= f.input :tracking_number, placeholder: 'Numéro de colis',label: false%>
-                        <%= f.button :submit, 'Ajouter', class: 'track_button' %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <% if @products.blank? %>
+        <div class="aucun_resultat text-center">
+          <h4>Aucun produit ne correspond à votre recherche...</h4>
         </div>
-      </div>
-        <% end %>
+      <% else %>
+        <div class="filter">
+          <ul class="list-inline">
+            <li>
+              <%= link_to "Tout", root_path, id: "all", remote: true %>
+            </li>
+            <li>
+              <%= link_to "Livrés", root_path(delivery_steps: "Delivered"), id: "delivered", remote: true %>
+            </li>
+            <li>
+              <%= link_to "En cours", root_path(delivery_steps: "InTransit"), id: "transit", remote: true %>
+            </li>
+          </ul>
+        </div>
+        <div id="products-container">
+          <%= render "products", products: @products %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

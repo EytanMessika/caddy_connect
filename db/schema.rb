@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160830125754) do
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.string   "user_sku"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "EUR", null: false
+    t.json     "payment"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.float    "price"
@@ -68,6 +78,9 @@ ActiveRecord::Schema.define(version: 20160830125754) do
     t.string   "refresh_token"
     t.datetime "token_expiry"
     t.string   "photo"
+    t.boolean  "premium"
+    t.json     "payment"
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
