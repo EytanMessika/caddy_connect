@@ -4,10 +4,10 @@ class ProductsController < ApplicationController
   def index
     if !params[:recherche].blank?
       @products = Product.search_product(params[:recherche]).where(user: current_user).order(created_at: :desc)
-    else 
+    else
       @products = current_user.products.order(created_at: :desc)
     end
-    
+
     @products = @products.where(delivery_steps: params[:delivery_steps]) unless params[:delivery_steps].blank?
 
     # //GMAIL SCRAPPING//
@@ -67,9 +67,9 @@ class ProductsController < ApplicationController
 
     @total_amount = @products.map(&:price).map(&:to_i).reduce(0, :+)
     @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
-    
+
     if @average_cart_amount.nan?
-      @average_cart_amount = 0 
+      @average_cart_amount = 0
     end
 
     @products_by_category_hash = @products.group_by(&:category)
