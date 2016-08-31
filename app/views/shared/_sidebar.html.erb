@@ -11,15 +11,17 @@
         <%= link_to root_path do %>
         <i class="fa fa-tachometer" aria-hidden="true"> </i> Dashboard
         <% end %>
-      </li>
+    </li>
     <li>
         <%= link_to stats_path do %>
         <i class="fa fa-bar-chart" aria-hidden="true"> </i> Statistiques
         <% end %>
-      </li>
+    </li>
     <li>
-        <i class="fa fa-bolt" aria-hidden="true"></i> Aides
-      </li>
+      <%= link_to premium_path do %>
+        <i class="fa fa-bolt" aria-hidden="true"></i> Premium
+    </li>
+      <% end %>
       </div>
   </ul>
 </div>

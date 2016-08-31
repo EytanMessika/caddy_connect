@@ -15,7 +15,8 @@ text-decoration:none;
 }
 
 .track_button{
-  // margin-left: 10px;
+  padding: 6px 12px;
+  line-height: 1.4;
   border-top-right-radius: 4px!important;
   border-bottom-right-radius: 4px!important;
   border-top-left-radius: 0px!important;
@@ -26,6 +27,12 @@ text-decoration:none;
   height: 36px;
   margin-left: -4px;
 }
+
+.track_button:disabled{
+    opacity: 1;
+    background: #27ae60;
+    color : white;
+}​
 
 .track_button:hover {
   background: #27ae60;
@@ -44,4 +51,35 @@ text-decoration:none;
   background: #27ae60;
   color: #fff;
   text-decoration: none;
+}
+
+.brand-button{
+background: #3FC1C9;
+border-radius: 4px;
+font-size: 18px;
+font-weight: 300;
+color: #FFFFFF;
+letter-spacing: 1px;
+padding: 6px 15px;
+text-decoration: none;
+border: none;
+}
+
+.brand-button:hover{
+color: #FFFFFF!important;
+background: #3FC1C9;
+text-decoration: none;
+}
+
+.stripe-button-el {
+  box-shadow: none!important;
+  border: none!important;
+  -webkit-box-shadow: none!important;
+}
+
+.stripe-button-el span{
+  background: #2C3947!important;
+  box-shadow: none!important;
+  border: none!important;
+  -webkit-box-shadow: none!important;
 }

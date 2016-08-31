@@ -1,0 +1,102 @@
+<div class="wrapper-dashboard">
+  <div class="header-title text-center">
+          <h2>Premium</h2>
+        </div>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+          <div class='pricing1 pricing animated swing'>
+            <div class='thumbnail animated  infinite'>
+              <div><i>0 €</i></div>
+            </div>
+            <div class='title', id = 'title_1'>
+              Plan Gratuit</div>
+            <div class='content', id = 'content_1'>
+              <div class='sub-title'>
+                0€
+                <i>/An</i>
+              </div>
+              <ul>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Status de livraisons
+                </li>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Statistiques achats
+                </li>
+                <li>
+                  <div class='fa fa-close'></div>
+                  Retour produits sur mesure
+                </li>
+                <li>
+                  <div class='fa fa-close'></div>
+                  Notifications par SmS
+                </li>
+              </ul>
+              <div class="text-center">
+              <h5>Gratuit</h5>
+              </div>
+            </div>
+              <div class='clickMe'>
+                Clique
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+          <div class='pricing animated swing'>
+            <div class='thumbnail animated pulse infinite'>
+              <div><i>79 €</i></div>
+            </div>
+            <div class='title', id = "title_2">
+              Plan Offensif
+            </div>
+            <div class='content', id ="content_2">
+              <div class='sub-title'>
+                79€
+                <i>/An</i>
+              </div>
+              <ul>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Status de livraisons
+                </li>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Statistiques achats
+                </li>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Retour produits sur mesure
+                </li>
+                <li>
+                  <div class='fa fa-check'></div>
+                  Notifications par SmS
+                </li>
+              </ul>
+              <div class="text-center">
+                <% if  current_user.premium == nil %>
+                <%= form_tag payments_path do %>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-image="<%= current_user.photo %>"
+                    data-name="<%= current_user.name %>"
+                    data-email="<%= current_user.email %>"
+                    data-label="Souscrire"
+                    data-amount="7900"
+                    data-currency="EUR">
+                    </script>
+                  <% end %>
+                  <% else %>
+                  <h5>Vous êtes déjà premium!</h5>
+                  <% end %>
+              </div>
+            </div>
+            <div class='clickMe2'>
+              Clique
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

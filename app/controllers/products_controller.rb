@@ -2,8 +2,19 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [ :edit, :update]
 
   def index
-    @products = current_user.products
-    #//GMAIL SCRAPPING//
+    if !params[:recherche].blank?
+      @products = Product.search_product(params[:recherche]).where(user: current_user).order(created_at: :desc)
+    else
+      @products = current_user.products.order(created_at: :desc)
+    end
+
+    @delivery_steps = params[:delivery_steps]
+    if @delivery_steps == 'en cours'
+      @products = @products.where('delivery_steps = ? OR delivery_steps = ?', 'Pending', 'InTransit')
+    else
+      @products = @products.where(delivery_steps: @delivery_steps) unless @delivery_steps.blank?
+    end
+    # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"
     # mail = client.get_mail("156b27dc2b090088")
@@ -33,8 +44,10 @@ class ProductsController < ApplicationController
 
   def update
     @product.assign_attributes(product_params)
-    status = AftershipService.new(current_user).get_tracking_status(@product)
-    @product.delivery_steps = status
+    if params[:product][:tracking_number]
+      status = AftershipService.new(current_user).get_tracking_status(@product)
+      @product.delivery_steps = status
+    end
     @product.save
     redirect_to :back
   end
@@ -42,9 +55,6 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  def graph
-    @products_by_category_hash = current_user.products.group_by(&:category)
-  end
   def stats
     if params[:interval] == 'week'
       @products = current_user.products.select { |product| product.purchase_date.cweek == Date.today.cweek }
@@ -55,6 +65,16 @@ class ProductsController < ApplicationController
     else
       @products = current_user.products
     end
+
+
+    @total_amount = @products.map(&:price).map(&:to_f).reduce(0, :+)
+    @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
+
+    if @average_cart_amount.nan?
+      @average_cart_amount = 0
+    end
+
+    @products_by_category_hash = @products.group_by(&:category)
   end
 
   private
@@ -64,6 +84,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :ecommerce, :tracking_number, :purchase_date, :photo, :user_id)
+    params.require(:product).permit(:name, :price, :description, :brand, :ecommerce, :category, :tracking_number, :purchase_date, :photo, :user_id)
   end
 end

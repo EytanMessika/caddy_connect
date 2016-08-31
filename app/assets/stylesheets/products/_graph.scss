@@ -1,116 +1,161 @@
-@import url("http://uwhealth.github.io/Nu-Connect/uconnect_assets/css/main.css");
 
-.wrapper_graph {
-  padding: 3rem 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
+.pricing {
+  position: absolute;
+  background: #3FC1C9;
+  width: 280px;
+  top: 50%;
+  left: 50%;
+  margin: 14px 0 0 -98px;
+  padding: 40px 0 20px;
+  color: #fff;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-.st0{fill:#D7DDE5;}
-.st1, .knob_data{fill:#2EAB6F; color:#2EAB6F;}
-
-.graph {
-  width: 80%;
-  display: table;
-  margin: 0 auto 0;
-  position: relative;
-  text-align: center;
-  height: 12.5rem;
-}
-
-.graph_media {
-  max-height: 12rem;
+.pricing1 {
+  background: #EB6379!important;
 }
 
-.graph_data, .knob_data {
-  font-size: 3rem;
-}
-
-.graph_data {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.box_division {
-  border-top: 1px solid #D7DDE5;
-  padding: 0;
-}
-
-// .box_body {
-//   background-image: linear-gradient(#ededed 1px, transparent 1px),
-// linear-gradient(90deg, #ededed 1px, transparent 1px);
-//   background-size: 9px 9px;
-// }
-
-.box_full {
-  max-height: none;
-  height: auto;
-}
-
-.box_more_button {
+.pricing .thumbnail {
+  background: #fff;
+  /* IE Fall */
+  background: rgba(255, 255, 255, 0.2);
   display: block;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  font-size: 36px;
+  line-height: 90px;
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  transition: transform .12s ease-out;
+}
+.pricing .title {
+  cursor: pointer;
+  background: #2C3947;
+  margin: 40px 0 0;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.pricing .content {
+  display: none;
+}
+.pricing .content .sub-title {
+  background: #eee;
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+.pricing .content ul {
+  list-style: none;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+}
+.pricing .content ul li {
+  padding: 10px 20px;
+}
+.pricing .content ul li:nth-child(2n) {
+  background: #f3f3f3;
+}
+.pricing .content ul li .fa {
+  width: 16px;
+  margin-right: 10px;
+  text-align: center;
+}
+.pricing .content ul li .fa-check {
+  color: #2ecc71;
+}
+.pricing .content ul li .fa-close {
+  color: #e74c3c;
+}
+.pricing .content a {
+  display: block;
+  background: #2C3947;
+  max-width: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+.pricing .content a:hover {
+  background: #34495e;
+  /* IE Fallback */
+  background: rgba(52, 73, 94, 0.7);
+}
+.clickMe {
+  background: #fff;
+  /* IE Fallback */
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 180px;
+  left: -60px;
+  padding: 5px 7px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #3FC1C9;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.clickMe:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: -5px;
+  width: 0px;
+  height: 0px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5 solid #fff;
+  /* IE Fallback */
+  border-left: 5px solid rgba(255, 255, 255, 0.8);
 }
 
-.box_padding {
-  padding-top: 70px;
+.clickMe2 {
+  background: #fff;
+  /* IE Fallback */
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 180px;
+  left: 290px;
+  padding: 5px 7px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #3FC1C9;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
 }
-
-.stats {
-  width: 100%;
-  margin-bottom: -2px;
-  height: 5.75rem;
-  display: table;
-}
-
-.stats_row > .stats_item {
-  border-left: 1px solid #D7DDE5;
-  padding: .75rem 1.5rem;
-  overflow: hidden;
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
-}
-
-.stats_row > .stats_item:first-child {
-  border-left: 0;
-}
-
-.stats_row:after {
-  content: ' ';
-  display: table;
-  clear: both;
-}
-
-.stats_item_number {
-  white-space: nowrap;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-
-  &:before {
-    display: none;
-  }
-}
-
-.txt_success {
-  color: #2EAB6F;
-}
-
-.txt_warn {
-  color: #DDC728;
-}
-
-.txt_smaller {
-  font-size: .75em;
-}
-
-.flipY {
-  transform: scaleY(-1);
-  border-bottom-color: #fff;
-}
-
-.txt_faded {
-  opacity: .65;
+.clickMe2:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 49px;
+  width: 0px;
+  height: 0px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5 solid #fff;
+  /* IE Fallback */
+  border-right: 5px solid rgba(255, 255, 255, 0.8);
 }

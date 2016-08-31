@@ -1,0 +1,132 @@
+<% products.each do |product| %>
+  <div class="col-xs-6 col-sm-3">
+    <div class='card'>
+      <%= image_tag product.photo, id: 'userImage' %>
+      <i class="fa fa-amazon" id='badge-card'></i>
+      <h4 id='playerName'><%= product.name %></h4>
+      <div class="category-product">
+        <a href='#' type="button", data-toggle="modal" data-target="#category-modal-<%= product.id %>">
+          <i class='fa fa-gear'></i>
+        </a>
+      </div>
+      <div id='states'>
+        <ul id='info'>
+          <li>
+            Prix
+          </li>
+          <li>
+            Catégorie
+          </li>
+          <li>
+            Livraison
+          </li>
+        </ul>
+        <ul id='values'>
+          <li><%= product.price %> €</li>
+          <% if product.category == nil %>
+            <li>A préciser</li>
+          <% else %>
+            <li><%= product.category %></li>
+          <% end %>
+          <% if product.delivery_steps == nil %>
+            <li>Aucun suivi</li>
+          <% elsif product.delivery_steps == "Pending" %>
+            <li>En attente</li>
+          <% elsif product.delivery_steps == "InTransit" %>
+          <li>En cours</li>
+          <% elsif product.delivery_steps == "Delivered" %>
+          <li>Colis reçu !</li>
+          <% end %>
+        </ul>
+      </div>
+      <% if product.tracking_number.empty? %>
+        <a href='#' id='contactBtn' type="button", data-toggle="modal" data-target="#product-modal-<%= product.id %>">
+          <i class='fa fa-paper-plane spin'></i>
+           Suivre
+        </a>
+      <% else %>
+        <% if product.delivery_steps == "InTransit" %>
+          <div class="small-margin-card">
+            <div class="progress">
+              <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50"
+              aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                En cours
+              </div>
+            </div>
+          </div>
+        <% elsif product.delivery_steps == "Delivered" %> 
+          <div class="small-margin-card">
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
+              aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                Reçu !
+              </div>
+            </div>
+          </div>
+        <% elsif product.delivery_steps == "Pending" %>
+          <div class="small-margin-card">
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="25"
+              aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                25%
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- Tracking Modal -->
+    <div class="modal fade" id="product-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-style">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Suivre votre colis</h4>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(product) do |f| %>
+                <div class="form-inline">
+                  <div class="form-inputs text-center">
+                    <%= f.input :tracking_number, placeholder: 'Numéro de colis',label: false%>
+                    <%= f.button :submit, 'Ajouter', class: 'track_button' %>
+                   </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- category modal -->
+    <div class="modal fade" id="category-modal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-style">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Paramètres du produit</h4>
+            </div>
+            <div class="modal-body">
+              <h4>Retourner un produit</h4>
+              <div class="category">
+                <%= simple_form_for(product) do |f| %>
+                  <div class="form-inline">
+                    <div class="form-inputs text-center">
+                      <%= f.input :category, placeholder: 'Catégorie',label: false%>
+                      <%= f.button :submit, 'Ajouter', class: 'track_button' %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="header_retour text-center">
+                <h4>Retourner un produit</h4>
+              </div>
+              <!-- Formulaire de booking -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

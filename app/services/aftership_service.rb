@@ -23,7 +23,7 @@ class AftershipService
       courier = trackings_infos.first["slug"]
       data = AfterShip::V4::Tracking.get(courier, tracking_number)["data"]
       if data.empty?
-        "Unknown"
+        "Numéro inconnu"
       else
         data["tracking"]["tag"]
       end

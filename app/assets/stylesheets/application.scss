@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 // Your CSS
 @import "layout/index";
 @import "components/index";
@@ -16,5 +17,8 @@
 @import "products";
 @import "products/stats";
 @import "products/graph";
+@import "products/premium";
+@import "login";
+
 
 
