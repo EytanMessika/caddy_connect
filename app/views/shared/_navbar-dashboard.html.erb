@@ -17,11 +17,15 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+      <% if @notifications.exists? %>
+        <div id="notifications-container">
+          <%= render "shared/notifications", notifications: @notifications %>
+        </div>
+        <% else %>
         <div class="notif">
           <div class="badge-container">
             <i class="fa fa-bell-o"></i>
-            <div class="badge badge-blue">1</div>
+            <div class="badge badge-blue"><%= @notifications.count %></div>
           </div>
         </div>
       <% end %>

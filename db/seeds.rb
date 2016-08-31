@@ -254,3 +254,12 @@ product.create_activity key: 'product.created', recipient: user_test
 
 product = Product.create!(name: "Canapé", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
 product.create_activity key: 'product.created', recipient: user_test
+
+product = Product.create!(name: "Canapé1", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
+product.create_activity key: 'product.created', recipient: user_test
+
+product = Product.create!(name: "Canapé2", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
+product.create_activity key: 'product.created', recipient: user_test
+
+product = Product.create!(name: "Canapé3", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
+product.create_activity key: 'product.created', recipient: user_test
