@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
     end
 
 
-    @total_amount = @products.map(&:price).map(&:to_i).reduce(0, :+)
+    @total_amount = @products.map(&:price).map(&:to_f).reduce(0, :+)
     @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
     
     if @average_cart_amount.nan?
