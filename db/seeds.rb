@@ -228,10 +228,10 @@ user_test = User.create!(email:"test@caddyconnect.fr", password:"123456")
 # user_test = User.last
 
 
-product = Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-15", user: user_test, category: "Cuisine", photo: photo)
+product = Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-31", user: user_test, category: "Cuisine", photo: photo)
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Sport", photo: "http://www.destock-cycle.fr/Files/89440/Img/08/Velo-GIANT-Propel-Advanced-SL-2-Pro-Blancx800.jpg")
+product = Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-30", user: user_test, category: "Sport", photo: "http://www.destock-cycle.fr/Files/89440/Img/08/Velo-GIANT-Propel-Advanced-SL-2-Pro-Blancx800.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
 product = Product.create!(name: "Iphone 6", price: 459, description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
@@ -249,7 +249,7 @@ product.create_activity key: 'product.created', recipient: user_test
 product = Product.create!(name: "Ecran TV", price: 539, description: "Ecran 4K", brand: "Samsung", ecommerce: "Materiel", tracking_number: "", purchase_date: "2016-07-11", user: user_test, category: "Hi-Tech", photo: "http://www.technoconfort.com/vign460/8081p_1.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Rideaux", price: 45, description: "Tissu rose", brand: "Habitat", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://i2.cdscdn.com/pdt2/8/9/1/1/700x700/hm69850891/rw/rideau-home-maison-imprime-recto-verso-bleu.jpg")
+product = Product.create!(name: "Rideaux", price: 45, description: "Tissu rose", brand: "Habitat", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-29", user: user_test, category: "Maison", photo: "http://i2.cdscdn.com/pdt2/8/9/1/1/700x700/hm69850891/rw/rideau-home-maison-imprime-recto-verso-bleu.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
 product = Product.create!(name: "Canapé", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-23", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
