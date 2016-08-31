@@ -221,17 +221,14 @@ name = full_name.split.first(3).join(" ")
 full_price = price_td.text.strip
  price = (full_price.scan(/[-+]?[0-9]*(?:\,|\.)?[0-9]/).join("")).gsub(',', '.').to_f
 
-Puts "Destruction des User et des Products"
 
 Product.destroy_all
 User.destroy_all
 
-Puts "Création d'un User"
 
 user_test = User.create!(email:"test@caddyconnect.fr", password:"123456")
 # user_test = User.last
 
-Puts "Création des Products"
 
 product = Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-31", user: user_test, category: "Cuisine", photo: photo)
 product.create_activity key: 'product.created', recipient: user_test
