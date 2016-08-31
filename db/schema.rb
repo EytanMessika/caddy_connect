@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20160831150005) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160831150005) do
     t.string   "refresh_token"
     t.datetime "token_expiry"
     t.string   "photo"
+    t.string   "messenger_id"
     t.boolean  "premium"
     t.json     "payment"
     t.string   "name"

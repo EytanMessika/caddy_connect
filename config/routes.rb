@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/premium", to: "payments#premium", as: :premium
   root "pages#home"
   post "/webhooks" => "webhooks#delivery_status"
+  mount Facebook::Messenger::Server, at: 'bot'
 end
