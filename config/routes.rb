@@ -12,6 +12,7 @@ Rails.application.routes.draw do
    root 'products#index', as: :authenticated_root
   end
   get "/stats", to: "products#stats"
+  get "stats/graph", to: "products#graph"
   get "/premium", to: "payments#premium", as: :premium
   root "pages#home"
   post "/webhooks" => "webhooks#delivery_status"
