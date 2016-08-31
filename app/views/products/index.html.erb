@@ -1,29 +1,24 @@
 <div class="wrapper-dashboard">
   <div class="container-fluid">
     <div class="row">
-      <div class="filter">
-        <ul class="list-inline">
-          <li>
-            <%= link_to "Tout", root_path, id: "all", remote: true %>
-          </li>
-          <li>
-            <%= link_to "Livrés", root_path(delivery_steps: "Delivered"), id: "delivered", remote: true %>
-          </li>
-          <li>
-            <%= link_to "En cours", root_path(delivery_steps: "InTransit"), id: "transit", remote: true %>
-          </li>
-        </ul>
-      </div>
-      <!-- 3 divs/a + data-recherche
-      ecoute onclick sur les liens 
-      event.preventDefault
-      recupere data('recherche')
-      call ajax -->
       <% if @products.blank? %>
         <div class="aucun_resultat text-center">
           <h4>Aucun produit ne correspond à votre recherche...</h4>
         </div>
       <% else %>
+        <div class="filter">
+          <ul class="list-inline">
+            <li>
+              <%= link_to "Tout", root_path, id: "all", remote: true %>
+            </li>
+            <li>
+              <%= link_to "Livrés", root_path(delivery_steps: "Delivered"), id: "delivered", remote: true %>
+            </li>
+            <li>
+              <%= link_to "En cours", root_path(delivery_steps: "InTransit"), id: "transit", remote: true %>
+            </li>
+          </ul>
+        </div>
         <div id="products-container">
           <%= render "products", products: @products %>
         </div>

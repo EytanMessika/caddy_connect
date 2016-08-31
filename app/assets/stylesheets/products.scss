@@ -108,6 +108,11 @@ font-weight: bolder;
   margin-left: 34px;
 }
 .filter li{
-  padding-right: 3px!important;
+  font-size: 17px!important;
+  padding-right: 15px!important;
   margin-bottom: -9px!important;
+}
+
+.filter a:hover{
+  text-decoration: none!important;
 }

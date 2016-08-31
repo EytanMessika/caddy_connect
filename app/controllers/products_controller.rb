@@ -62,7 +62,16 @@ class ProductsController < ApplicationController
     else
       @products = current_user.products
     end
-    @products_by_category_hash = current_user.products.group_by(&:category)
+
+
+    @total_amount = @products.map(&:price).map(&:to_i).reduce(0, :+)
+    @average_cart_amount = (@total_amount.fdiv(@products.size)).round(2)
+    
+    if @average_cart_amount.nan?
+      @average_cart_amount = 0 
+    end
+
+    @products_by_category_hash = @products.group_by(&:category)
   end
 
   private
