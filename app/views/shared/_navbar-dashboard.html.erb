@@ -18,13 +18,14 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-      <div class="notif">
-        <div class="badge-container">
-          <i class="fa fa-bell-o"></i>
-          <div class="badge badge-blue">1</div>
+        <div class="notif">
+          <div class="badge-container">
+            <i class="fa fa-bell-o"></i>
+            <div class="badge badge-blue">1</div>
+          </div>
         </div>
-      </div>
       <% end %>
+    <% end %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -39,14 +40,6 @@
           </ul>
         </div>
       </div>
-
-
-      <!-- Login text link -->
-      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <%= link_to "Sign up", new_user_registration_path %>
-
-
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
