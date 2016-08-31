@@ -40,17 +40,15 @@ class ProductsController < ApplicationController
 
   def update
     @product.assign_attributes(product_params)
-    status = AftershipService.new(current_user).get_tracking_status(@product)
-    @product.delivery_steps = status
+    if params[:product][:tracking_number]
+      status = AftershipService.new(current_user).get_tracking_status(@product)
+      @product.delivery_steps = status
+    end
     @product.save
     redirect_to :back
   end
 
   def edit
-  end
-
-  def graph
-
   end
 
   def stats
