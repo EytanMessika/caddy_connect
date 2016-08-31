@@ -20,25 +20,15 @@
     <% if user_signed_in? %>
 
       <% if @notifications.exists? %>
-        <div class="dropdown">
-          <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle", "data-toggle" => "dropdown" do %>
-            <div class="notif">
-              <div class="badge-container">
-                <i class="fa fa-bell-o"></i>
-                <div class="badge badge-blue"><%= @notifications.count %></div>
-              </div>
-            </div>
-          <% end %>
-          <ul class="dropdown-menu">
-            <% @notifications.each do |notification| %>
-              <div class="container">
-                <div class="row read-activity" id="notification-<%= notification.id %>" data-id="<%= notification.id %>">
-                  <li>Produit <%= notification.trackable.name %> a été créé</li>
-                  <li><hr></li>
-                </div>
-              </div>
-            <% end %>
-          </ul>
+        <div id="notifications-container">
+          <%= render "shared/notifications", notifications: @notifications %>
+        </div>
+        <% else %>
+        <div class="notif">
+          <div class="badge-container">
+            <i class="fa fa-bell-o"></i>
+            <div class="badge badge-blue"><%= @notifications.count %></div>
+          </div>
         </div>
       <% end %>
     <% end %>
@@ -58,12 +48,6 @@
       </div>
 
     <% else %>
-
-      <!-- Login text link -->
-      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <%= link_to "Sign up", new_user_registration_path %>
-
 
   </div>
 
