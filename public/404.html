@@ -4,64 +4,699 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
   body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
+    padding: 0;
     margin: 0;
+    overflow: hidden;
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-weight: 700;
+    color: #6d6e71;
   }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  .container-fluid.content {
+    max-width: 96rem
   }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  .container-fluid::before,
+  .row::before {
+    display: table;
+    content: " ";
   }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .container-fluid::after,
+  .row::after {
+    clear: both;
+  }
+
+  .col-md-12 {
+    width: 100%;
+    float: left;
+  }
+
+  .banner404 {
+    background-color: #a9d4c7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .stars {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+  #sun-glow,
+  #sun {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: #dacd7e;
+  }
+
+  #sun-glow {
+    /* your position, dimension and margin specification here */
+    border-radius: 50%;
+    box-shadow: 0 0 13rem 5rem #dacd7e;
+    -webkit-animation-name: glow;
+    -moz-animation-name: glow;
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+  }
+
+  #star1,
+  #star4,
+  #star8,
+  #star12,
+  #star16,
+  #star20,
+  #star24,
+  #star28,
+  #star32 {
+    /* your position, dimension and margin specification here */
+    border-radius: 50%;
+    box-shadow: 0 0 5rem 1.5rem #fff;
+    -webkit-animation-name: glow2;
+    -moz-animation-name: glow2;
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+  }
+
+  #star2,
+  #star5,
+  #star9,
+  #star13,
+  #star17,
+  #star21,
+  #star25,
+  #star29,
+  #star33 {
+    /* your position, dimension and margin specification here */
+    border-radius: 50%;
+    box-shadow: 0 0 5rem .5rem #fff;
+    -webkit-animation-name: glow3;
+    -moz-animation-name: glow3;
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+  }
+
+  #star3,
+  #star6,
+  #star10,
+  #star14,
+  #star18,
+  #star22,
+  #star26,
+  #star30,
+  #star34 {
+    /* your position, dimension and margin specification here */
+    border-radius: 50%;
+    box-shadow: 0 0 7.5rem 2.5rem #fff;
+    -webkit-animation-name: glow4;
+    -moz-animation-name: glow4;
+    -webkit-animation-duration: 7s;
+    -moz-animation-duration: 57;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+  }
+
+  #star31 {
+    /* your position, dimension and margin specification here */
+    border-radius: 50%;
+    box-shadow: 0 0 2.5rem .5rem #fff;
+    -webkit-animation-name: glow5;
+    -moz-animation-name: glow5;
+    -webkit-animation-duration: 7s;
+    -moz-animation-duration: 7s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+  }
+
+  @-webkit-keyframes glow {
+    0% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+
+  @-webkit-keyframes glow2 {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  @-webkit-keyframes glow3 {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  @-webkit-keyframes glow4 {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes glow5 {
+    0% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: .9;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  #land1 {
+    position: absolute;
+    display: table;
+    bottom: -70%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/bkgnd1.svg');
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: cover;
+    width: 120%;
+    height: 100%;
+  }
+
+  #land2 {
+    position: absolute;
+    display: table;
+    bottom: -73%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/bkgnd2.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 120%;
+    height: 100%;
+  }
+
+  #land3 {
+    position: absolute;
+    display: table;
+    bottom: -76%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/bkgnd3.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 110%;
+    height: 100%;
+  }
+
+  #land4 {
+    position: absolute;
+    display: table;
+    bottom: -78%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/bkgnd4.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 110%;
+    height: 100%;
+  }
+
+  #titles {
+    position: absolute;
+    width: 9em;
+    height: 10em;
+    bottom: 30%;
+    left: 44%;
+    margin-left: -10em;
+    font-size: 250%;
+    text-align: justify;
+    overflow: hidden;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg);
+    -moz-transform: perspective(300px) rotateX(25deg);
+    -ms-transform: perspective(300px) rotateX(25deg);
+    -o-transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(25deg);
+  }
+
+  #titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0%;
+    bottom: 60%;
+    pointer-events: none;
+  }
+
+  #titles p {
+    text-align: justify;
+    margin: 0.8em 0;
+    text-shadow: .15rem .075rem .05rem #E5EAEC, .2rem .075rem .05rem #BCBCBC;
+  }
+
+  #titles p.center {
+    text-align: center;
+    font-size: 175%;
+  }
+
+  #titlecontent {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    -webkit-animation: scroll 10s linear 2s forwards;
+    -moz-animation: scroll 10s linear 2s forwards;
+    -ms-animation: scroll 10s linear 2s forwards;
+    -o-animation: scroll 10s linear 2s forwards;
+    animation: scroll 10s linear 2s forwards;
+  }
+
+  @-webkit-keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  @-moz-keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  @-ms-keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  @-o-keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  #planet-large {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/planet-large.png');
+    background-position: center 4rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+
+  #planet-small {
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    background-image: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/planet-small.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 9.2rem;
+    height: 9.2rem;
+  }
+
+  #pixie-wan-kenobi {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 95%;
+  }
+
+  #pixie-wan-kenobi img {
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  #droid {
+    position: absolute;
+    bottom: 1rem;
+    height: 10rem;
+    width: 10rem;
+    margin: 0 auto;
+    left: 70%;
+    transform: translateX(-30%);
+    overflow: visible;
+  }
+
+  @keyframes roll {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg) translateX(-500px) translateY(-10px);
+    }
+    100% {
+      transform: translate3d(0, 10px, 0) rotate(180deg);
+    }
+  }
+
+  @keyframes roll2 {
+    0% {
+      transform: translate3d(0, -10px, 0) rotate(0deg) translateX(-495px) translateY(0px);
+    }
+    100% {
+      transform: translate3d(0, 20px, 0) rotate(-22deg) translateY(40px);
+    }
+  }
+
+  #bb-body {
+    animation: roll 3s ease-in-out infinite alternate;
+    transform-origin: 50% 50% 0px;
+  }
+
+  #bb-head,
+  #antenna {
+    animation: roll2 2.99s ease-in-out infinite alternate;
+    transform-origin: 42% 32% 0px;
+  }
+
+  .millennium-falcon {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: -15rem;
+    bottom: 0px;
+    background: url('http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/millennium-falcon.svg');
+    background-size: cover;
+    background-position: center;
+    animation-name: fly;
+    animation-duration: 20s;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes fly {
+    0% {
+      bottom: 65%;
+      left: 10%;
+      transform: scale(0.05);
+    }
+    15% {
+      bottom: 61.5%;
+      left: 15%;
+      transform: scale(0.3);
+    }
+    25% {
+      bottom: 57.5%;
+      left: 30%;
+      transform: scale(0.2);
+    }
+
+    40% {
+      bottom: 63%;
+      left: 54%;
+      transform: scale(0.55);
+    }
+    50% {
+      bottom: 73%;
+      left: 60%;
+      transform: scale(1);
+    }
+    75% {
+      bottom: 56%;
+      left: 70%;
+      transform: scale(1.5);
+    }
+    95% {
+      bottom: 55%;
+      left: 85%;
+      transform: scale(1.8);
+    }
+
+    100% {
+      bottom: 54.5%;
+      left: 100%;
+      transform: scale(2.0);
+    }
   }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <section id="pixel-pixie" class="banner404">
+    <div class="stars">
+      <svg version="1.1" id="starfield" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="auto" viewBox="0 0 2294.514 819.919" enable-background="new 0 0 2294.514 819.919" xml:space="preserve">
+        <g id="stars">
+          <ellipse id="star34" fill="#FFFFFF" cx="2025.231" cy="283.138" rx="5.609" ry="5.898" />
+          <ellipse id="star33" fill="#FFFFFF" cx="1761.558" cy="182.859" rx="5.61" ry="5.898" />
+          <ellipse id="star32" fill="#FFFFFF" cx="1955.106" cy="368.669" rx="2.805" ry="2.949" />
+          <ellipse id="star31" fill="#FFFFFF" cx="2288.905" cy="595.768" rx="5.609" ry="5.899" />
+          <ellipse id="star30" fill="#FFFFFF" cx="1862.541" cy="613.465" rx="5.61" ry="5.898" />
+          <ellipse id="star29" fill="#FFFFFF" cx="1688.627" cy="501.39" rx="5.611" ry="5.898" />
+          <ellipse id="star28" fill="#FFFFFF" cx="1523.131" cy="404.062" rx="2.805" ry="2.949" />
+          <ellipse id="star27" fill="#FFFFFF" cx="1464.226" cy="235.948" rx="5.61" ry="5.898" />
+          <ellipse id="star26" fill="#FFFFFF" cx="1374.464" cy="17.694" rx="5.61" ry="5.898" />
+          <ellipse id="star25" fill="#FFFFFF" cx="1354.829" cy="115.023" rx="2.805" ry="2.95" />
+          <ellipse id="star24" fill="#FFFFFF" cx="1262.263" cy="194.656" rx="5.61" ry="5.899" />
+          <ellipse id="star23" fill="#FFFFFF" cx="1060.301" cy="336.226" rx="5.61" ry="5.898" />
+          <ellipse id="star22" fill="#FFFFFF" cx="973.345" cy="197.605" rx="2.805" ry="2.95" />
+          <ellipse id="star21" fill="#FFFFFF" cx="942.49" cy="29.493" rx="11.22" ry="11.797" />
+          <ellipse id="star20" fill="#FFFFFF" cx="1245.433" cy="483.694" rx="5.61" ry="5.897" />
+          <ellipse id="star19" fill="#FFFFFF" cx="936.88" cy="507.288" rx="5.61" ry="5.899" />
+          <ellipse id="star18" fill="#FFFFFF" cx="917.245" cy="663.604" rx="2.805" ry="2.95" />
+          <ellipse id="star17" fill="#FFFFFF" cx="936.88" cy="814.021" rx="5.61" ry="5.898" />
+          <ellipse id="star16" fill="#FFFFFF" cx="740.528" cy="554.478" rx="5.61" ry="5.899" />
+          <ellipse id="star15" fill="#FFFFFF" cx="847.119" cy="430.605" rx="5.61" ry="5.897" />
+          <ellipse id="star14" fill="#FFFFFF" cx="633.937" cy="725.542" rx="5.61" ry="5.897" />
+          <ellipse id="star13" fill="#FFFFFF" cx="437.585" cy="731.439" rx="5.61" ry="5.898" />
+          <ellipse id="star12" fill="#FFFFFF" cx="443.194" cy="501.39" rx="5.61" ry="5.898" />
+          <ellipse id="star11" fill="#FFFFFF" cx="546.98" cy="244.796" rx="8.415" ry="8.848" />
+          <ellipse id="star10" fill="#FFFFFF" cx="970.54" cy="194.656" rx="5.61" ry="5.899" />
+          <ellipse id="star9" fill="#FFFFFF" cx="678.817" cy="88.48" rx="5.61" ry="5.897" />
+          <ellipse id="star8" fill="#FFFFFF" cx="398.314" cy="230.048" rx="5.61" ry="5.9" />
+          <ellipse id="star7" fill="#FFFFFF" cx="448.804" cy="5.898" rx="0" ry="5.897" />
+          <path id="star6" fill="#FFFFFF" d="M364.653,418.807c0,3.26-2.511,5.9-5.61,5.9c-3.098,0-5.609-2.641-5.609-5.9
+    c0-3.256,2.511-5.898,5.609-5.898C362.143,412.908,364.653,415.551,364.653,418.807z" />
+          <ellipse id="star5" fill="#FFFFFF" cx="241.232" cy="560.377" rx="5.61" ry="5.899" />
+          <ellipse id="star4" fill="#FFFFFF" cx="5.61" cy="743.236" rx="5.61" ry="5.898" />
+          <ellipse id="star3" fill="#FFFFFF" cx="98.176" cy="250.695" rx="2.805" ry="2.948" />
+          <path id="star2" fill="#FFFFFF" d="M2114.358,493.815c0,1.728-1.336,3.13-2.977,3.13c-1.645,0-2.979-1.402-2.979-3.13
+    c0-1.729,1.334-3.131,2.979-3.131C2113.022,490.685,2114.358,492.086,2114.358,493.815z" />
+          <ellipse id="star1" fill="#FFFFFF" cx="1842.904" cy="103.227" rx="8.415" ry="8.848" />
+        </g>
+      </svg>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+
+    <div>
+      <div id="sun-glow"></div>
+      <div id="planet-small" class="js-plaxify" data-yrange="0" data-xrange="30" data-invert="true"></div>
+      <div id="planet-large" class="js-plaxify" data-yrange="5" data-xrange="10" data-invert="true"></div>
+      <div class="millennium-falcon"></div>
+    </div>
+
+    <div>
+      <div id="land1" class="js-plaxify" data-yrange="7" data-xrange="5" data-invert="false" style="overflow: hidden;"></div>
+      <div id="land2" class="js-plaxify" data-yrange="15" data-xrange="0" data-invert="false" style="overflow: hidden;"></div>
+      <div id="land3" class="js-plaxify" data-yrange="12" data-invert="true"></div>
+      <div id="land4" class="js-plaxify" data-yrange="15" data-invert="false"></div>
+    </div>
+
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+          <div id="titles">
+            <div id="titlecontent">
+
+              <p class="center">ERROR 404</p>
+              <p>This is not the web page you are looking for.</p>
+
+            </div>
+          </div>
+
+          <figure id="pixie-wan-kenobi" class="js-plaxify" data-yrange="10" data-xrange="20">
+            <img src="http://themedev.thepixelpixie.com/wp-content/themes/pixie/images/pixie-wan-kenobi.svg">
+          </figure>
+
+          <figure class="bb-droid">
+            <svg version="1.1" id="droid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="388.889px" height="437.778px" viewBox="0 0 388.889 437.778" enable-background="new 0 0 388.889 437.778" xml:space="preserve">
+
+              <g id="bb8">
+                <g id="bb-body">
+                  <defs>
+                    <circle id="SVGID_1_" cx="156.113" cy="261.324" r="132.406" />
+                  </defs>
+
+                  <use xlink:href="#SVGID_1_" overflow="visible" fill="#FFFFFF" />
+
+                  <clipPath id="SVGID_2_">
+                    <use xlink:href="#SVGID_1_" overflow="visible" />
+                  </clipPath>
+
+                  <g clip-path="url(#SVGID_2_)">
+
+                    <rect x="178.439" y="146.329" transform="matrix(0.7464 0.6655 -0.6655 0.7464 233.1045 -48.3414)" fill="#58595B" width="3.089" height="270.733" />
+
+                    <rect x="40.607" y="276.882" transform="matrix(0.7091 0.7051 -0.7051 0.7091 247.4919 -43.0909)" fill="#58595B" width="270.734" height="3.09" />
+                  </g>
+
+                  <g clip-path="url(#SVGID_2_)">
+                    <circle fill="#FC8D00" cx="296.793" cy="146.021" r="75.582" />
+                    <path fill="#FFFFFF" d="M349.301,158.962c-0.482,1.964-1.072,3.885-1.762,5.756c-5.189,14.083-16.074,25.413-29.865,31.19        c-2.445,1.023-4.988,1.876-7.6,2.532l-2.248-20.973h-20.963l-3.012,21.062c-19.463-4.779-34.787-20.104-39.566-39.567       l21.061-3.011v-20.963l-20.973-2.247c0.764-3.036,1.787-5.967,3.041-8.774c5.689-12.711,16.141-22.826,29.086-28.074        c2.369-0.962,4.824-1.756,7.352-2.378l3.012,21.061h20.963l2.248-20.973c19.189,4.842,34.291,19.948,39.139,39.139l-20.975,2.247        v20.963L349.301,158.962z"
+                    />
+                  </g>
+
+                  <g clip-path="url(#SVGID_2_)">
+                    <circle fill="#FC8D00" cx="54.05" cy="411.936" r="75.582" />
+                    <path fill="#FFFFFF" d="M106.558,424.877c-0.481,1.964-1.072,3.885-1.761,5.756c-5.19,14.082-16.074,25.412-29.866,31.19       c-2.445,1.022-4.988,1.876-7.601,2.532l-2.246-20.973H44.119l-3.01,21.062c-19.464-4.78-34.788-20.104-39.567-39.567l21.061-3.01        v-20.965L1.63,398.656c0.763-3.036,1.788-5.967,3.041-8.773c5.689-12.712,16.14-22.828,29.085-28.076       c2.369-0.961,4.823-1.756,7.353-2.377l3.01,21.061h20.965l2.246-20.973c19.19,4.842,34.293,19.948,39.14,39.139l-20.974,2.246       v20.965L106.558,424.877z"
+                    />
+                  </g>
+
+                  <g clip-path="url(#SVGID_2_)">
+                    <circle fill="#FC8D00" cx="56.257" cy="157.055" r="75.582" />
+                    <path fill="#FFFFFF" d="M108.765,169.996c-0.482,1.963-1.072,3.884-1.762,5.756c-5.189,14.082-16.074,25.412-29.865,31.189       c-2.445,1.023-4.988,1.876-7.601,2.533l-2.247-20.973H46.326l-3.01,21.061c-19.464-4.779-34.788-20.104-39.567-39.566       l21.062-3.01v-20.965l-20.974-2.246c0.764-3.036,1.788-5.967,3.041-8.773c5.689-12.712,16.141-22.828,29.085-28.076       c2.37-0.961,4.825-1.756,7.354-2.377l3.01,21.061H67.29l2.247-20.973c19.19,4.842,34.293,19.948,39.139,39.139l-20.973,2.246        v20.965L108.765,169.996z"
+                    />
+                  </g>
+
+                  <g clip-path="url(#SVGID_2_)">
+                    <circle fill="#FC8D00" cx="182.693" cy="286.794" r="75.581" />
+
+                    <g>
+                      <g>
+                        <path fill="#FFFFFF" d="M235.2,299.734c-0.48,1.964-1.072,3.885-1.76,5.756c-5.191,14.083-16.074,25.412-29.867,31.189           c-2.445,1.024-4.986,1.877-7.6,2.533l-2.246-20.973h-20.964l-3.01,21.062c-19.464-4.78-34.787-20.104-39.567-39.567           l21.062-3.01V275.76l-20.974-2.246c0.764-3.035,1.788-5.967,3.041-8.773c5.688-12.711,16.14-22.827,29.085-28.075           c2.37-0.962,4.824-1.757,7.354-2.378l3.01,21.061h20.964l2.246-20.973c19.189,4.842,34.293,19.949,39.139,39.139l-20.973,2.246            v20.965L235.2,299.734z"
+                        />
+
+                        <path fill="#6D6E71" d="M233.44,305.49c-5.191,14.083-16.074,25.412-29.867,31.189l-7.484-28.736l8.156-9.113L233.44,305.49z" />
+
+                        <path fill="#6D6E71" d="M168.503,262.617l-8.372,8.919l-26.816-6.796c5.688-12.711,16.14-22.827,29.085-28.075L168.503,262.617           z" />
+                      </g>
+
+                      <g>
+                        <rect x="162.069" y="290.484" transform="matrix(0.688 -0.7257 0.7257 0.688 -153.4069 228.5425)" fill="#6D6E71" width="54.066" height="4.413" />
+
+                        <rect x="155.661" y="284.587" transform="matrix(0.688 -0.7257 0.7257 0.688 -151.1255 222.044)" fill="#6D6E71" width="54.066" height="4.414" />
+
+                        <rect x="149.252" y="278.691" transform="matrix(0.688 -0.7257 0.7257 0.688 -148.8475 215.5616)" fill="#6D6E71" width="54.065" height="4.413" />
+                      </g>
+                    </g>
+                  </g>
+                </g>
+
+                <g id="bb-head">
+                  <path fill="#F8FCFB" d="M295.348,113.531c-0.83-3.54-1.84-7.02-3.03-10.41c-3.54-10.19-8.56-19.65-14.8-28.09      c-6.01-8.14-13.15-15.34-21.17-21.35c-16.7-12.53-37.24-19.91-59.45-19.91c-0.851,0-1.69,0.01-2.54,0.04h-0.01      c-10.18,0.25-19.98,2.06-29.19,5.2c-9.95,3.39-19.21,8.32-27.52,14.53c-2.85,2.12-5.59,4.39-8.2,6.81     c-5.75,5.29-10.9,11.26-15.36,17.77c-4.34,6.35-8.02,13.22-10.93,20.5l81.9,25.96l62.25,19.73l13.921,4.41l4.319,1.37l10.99,3.49      l4.15,1.31l4.569,1.45l10.95,3.47c1.36-6.85,2.08-13.95,2.08-21.22C298.278,129.951,297.268,121.562,295.348,113.531z      M195.837,84.231c0-0.86,0.051-1.71,0.15-2.55c0.34-3.08,1.3-5.97,2.76-8.55c3.88-6.88,11.25-11.52,19.71-11.52     c12.49,0,22.61,10.13,22.61,22.62c0,0.82-0.04,1.63-0.13,2.42c-0.33,3.08-1.271,5.98-2.72,8.57     c-3.86,6.94-11.261,11.63-19.761,11.63C205.958,106.852,195.837,96.721,195.837,84.231z"
+                  />
+
+                  <path fill="#FC8D00" d="M137.638,53.542l61.11,19.59c-1.46,2.58-2.42,5.47-2.76,8.55l-66.55-21.33     C132.048,57.931,134.788,55.661,137.638,53.542z" />
+
+                  <path fill="#FC8D00" d="M295.348,113.531l-57.13-18.31c1.449-2.59,2.39-5.49,2.72-8.57l51.38,16.47      C293.508,106.511,294.518,109.991,295.348,113.531z" />
+
+                  <path fill="#6D6E71" d="M277.518,75.031l-112.36-36.02c9.21-3.14,19.01-4.95,29.19-5.2h0.01l61.99,19.87     C264.368,59.691,271.508,66.891,277.518,75.031z" />
+
+                  <path fill="#FC8D00" d="M191.938,103.071l-6.89,21.51l-81.9-25.96c2.91-7.28,6.59-14.15,10.93-20.5L191.938,103.071z" />
+
+                  <polygon fill="#FC8D00" points="267.908,127.861 261.218,148.721 247.297,144.312 253.998,123.401     " />
+
+                  <polygon fill="#FC8D00" points="282.948,133.542 276.528,153.582 265.538,150.091 271.968,130.021     " />
+
+                  <polygon fill="#FC8D00" points="291.417,137.111 285.248,156.341 280.678,154.891 286.848,135.651     " />
+
+                  <g>
+                    <path fill="#6D6E71" d="M241.068,84.231c0,0.82-0.04,1.63-0.13,2.42c-0.33,3.08-1.271,5.98-2.72,8.57        c-3.86,6.94-11.261,11.63-19.761,11.63c-12.5,0-22.62-10.13-22.62-22.62c0-0.86,0.051-1.71,0.15-2.55       c0.34-3.08,1.3-5.97,2.76-8.55c3.88-6.88,11.25-11.52,19.71-11.52C230.948,61.611,241.068,71.741,241.068,84.231z"
+                    />
+
+                    <circle fill="#6D6E71" cx="238.315" cy="118.438" r="8.275" />
+                  </g>
+                </g>
+
+                <g id="antenna">
+
+                  <rect x="279.582" y="23.544" transform="matrix(-0.8941 -0.4479 0.4479 -0.8941 521.3312 174.9436)" fill="#6D6E71" width="3.534" height="4.582" />
+
+                  <rect x="263.352" y="53.33" transform="matrix(-0.8941 -0.4479 0.4479 -0.8941 475.8133 229.458)" fill="#6D6E71" width="3.371" height="10.279" />
+
+                  <rect x="272.155" y="26.372" transform="matrix(-0.8942 -0.4477 0.4477 -0.8942 500.4513 200.0702)" fill="#F8FCFB" width="3.425" height="29.051" />
+                </g>
+              </g>
+            </svg>
+
+          </figure>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
 </body>
 </html>
+
