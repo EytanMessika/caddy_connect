@@ -1,15 +1,26 @@
 <div class="wrapper-dashboard">
-  <div class="facebook_button text-center">
-
-    <div class="fb-send-to-messenger"
-      messenger_app_id="<%= ENV['FACEBOOK_APP_ID'] %>"
-      page_id="<%= ENV['FB_PAGE_ID'] %>"
-      data-ref="<%= current_user.id %>"
-      color="blue"
-      size="standard" > 
+  <div class="header-title text-center">
+          <h2>Facebook Bot</h2>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12"> 
+        <div class="facebook_button text-center">
+          <div class="fb-send-to-messenger"
+          messenger_app_id="<%= ENV['FACEBOOK_APP_ID'] %>"
+          page_id="<%= ENV['FB_PAGE_ID'] %>"
+          data-ref="<%= current_user.id %>"
+          color="blue"
+          size="standard" > 
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>  
+</div>
+
+    
+ 
 <script>
       window.fbAsyncInit = function() {
         FB.init({
