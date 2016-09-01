@@ -5,7 +5,7 @@
       <% if product.ecommerce == "Amazon" %>
       <i class="fa fa-amazon" id='badge-card'></i>
       <% elsif product.ecommerce == "Apple" %>
-      <i class="fa fa-amazon" id='badge-card'></i>
+      <i class="fa fa-apple" id='badge-card'></i>
       <% else %>
       <i id='badge-card' style="font-size:11px;"><%= product.ecommerce  %></i>
       <% end %>
@@ -29,7 +29,7 @@
         </ul>
         <ul id='values'>
           <li><%= product.price %> €</li>
-          <% if product.category == nil %>
+          <% if product.category.blank? %>
             <li>A préciser</li>
           <% else %>
             <li><%= product.category %></li>

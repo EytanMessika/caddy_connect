@@ -226,34 +226,34 @@ Product.destroy_all
 User.destroy_all
 
 
-user_test = User.create!(email:"test@caddyconnect.fr", password:"123456")
+user_test = User.create!(email:"manou@gmail.com", password:"123456")
 # user_test = User.last
 
 
-product = Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-31", user: user_test, category: "Cuisine", photo: photo)
+# product = Product.create!(name: name, price: price, description: "poele a steak", brand: "Tefal", ecommerce: ecommerce, tracking_number: "", purchase_date: "2016-08-31", user: user_test, category: "Cuisine", photo: photo)
+# product.create_activity key: 'product.created', recipient: user_test
+
+product = Product.create!(name: "Le mariage pour les nuls", price: 15.90, description: "Le Mariage Pour Les Nuls", brand: "Les nuls", ecommerce: "PriceMinister", tracking_number: "", purchase_date: "2016-08-30", user: user_test, category: "Livre", photo: "http://pmcdn.priceminister.com/photo/mariage-pour-les-nuls-de-collectif-1046447446_L.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Velo", price: 150, description: "Velo tout terrain", brand: "Giant", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-30", user: user_test, category: "Sport", photo: "http://www.destock-cycle.fr/Files/89440/Img/08/Velo-GIANT-Propel-Advanced-SL-2-Pro-Blancx800.jpg")
+product = Product.create!(name: "Enceinte Marshall", price: 255, description: "Enceinte MARSHALL Kilburn noir", brand: "Marshall", ecommerce: "Cdiscount", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://i2.cdscdn.com/pdt2/8/3/4/1/700x700/mar7340055313834/rw/enceinte-marshall-kilburn-noir.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Iphone 6", price: 459, description: "Le nouveau téléphone à la mode", brand: "Apple", ecommerce: "Apple Store", tracking_number: "", purchase_date: "2016-07-20", user: user_test, category: "Hi-Tech", photo: "http://www.deserres.ca/data/Products/Photos/FR/standard/Source/85132_1_GUSTAVE.jpg")
+product = Product.create!(name: "Jeans Slim", price: 90, description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Vetement", photo: "https://www.mode-destock.com/5295-thickbox/jeans-levis-501-brut.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Jeans Slim", price: 66, description: "Jean Bleu taille 36", brand: "Levis", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-05-13", user: user_test, category: "Vetement", photo: "https://www.mode-destock.com/5295-thickbox/jeans-levis-501-brut.jpg")
+product = Product.create!(name: "Maillot de Bain H", price: 37.90, description: "Maillot de bain homme taille S", brand: "Quicksilver", ecommerce: "Asos", tracking_number: "", purchase_date: "2016-06-01", user: user_test, category: "Vètement", photo: "http://static.quiksilver.com/www/store.quiksilver.eu/html/images/catalogs/global/quiksilver-products/all/default/medium-large2/eqybs03246_divisionremixvee19,v_kta6_frt1.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Top Bleu", price: 52, description: "Top bleu taille M", brand: "Sandro", ecommerce: "Sandro", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Vetement", photo: "http://i2.cdscdn.com/pdt2/5/5/8/1/700x700/mp00308558/rw/top-en-dentelle-bleu-marine.jpg")
+product = Product.create!(name: "Titanic DVD", price: 9, description: "DVD Titanic Francais", brand: "Fnac", ecommerce: "Fnac", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Livre", photo: "http://pmcdn.priceminister.com/photo/Titanic-DVD-Zone-2-11173_L.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Bilboquet", price: 10, description: "Jeu d'adresse en bois", brand: "Janod", ecommerce: "Cdiscount", tracking_number: "", purchase_date: "2016-06-02", user: user_test, category: "Jouet", photo: "https://amobois.com/28/bilboquet.jpg")
+product = Product.create!(name: "Ruby on Rails", price: 44.47, description: "Livre Ruby On Rails", brand: "Broché", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-26", user: user_test, category: "Culture", photo: "https://images-na.ssl-images-amazon.com/images/I/41T3LWapwwL._SX412_BO1,204,203,200_.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Ecran TV", price: 539, description: "Ecran 4K", brand: "Samsung", ecommerce: "Materiel", tracking_number: "", purchase_date: "2016-07-11", user: user_test, category: "Hi-Tech", photo: "http://www.technoconfort.com/vign460/8081p_1.jpg")
+product = Product.create!(name: "Coque Batterie", price: 119, description: "Smart Battery Case pour iPhone 6s", brand: "Smart Battery Case", ecommerce: "Apple", tracking_number: "", purchase_date: "2016-08-28", user: user_test, category: "Hi-Tech", photo: "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/M/GQ/MGQL2/MGQL2?wid=890&hei=890&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=7m3lT0")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Rideaux", price: 45, description: "Tissu rose", brand: "Habitat", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-28", user: user_test, category: "Maison", photo: "http://i2.cdscdn.com/pdt2/8/9/1/1/700x700/hm69850891/rw/rideau-home-maison-imprime-recto-verso-bleu.jpg")
-product.create_activity key: 'product.created', recipient: user_test
-
-product = Product.create!(name: "Canapé", price: 888, description: "Cuir d'Italie", brand: "Habitat.com", ecommerce: "Habitat", tracking_number: "", purchase_date: "2016-08-29", user: user_test, category: "Maison", photo: "http://media.laredoute.com/products2/250by250/1/a/f/500911190_0_PR_1_1200.jpg")
+product = Product.create!(name: "Tee Shirt Code", price: 18.73, description: "Keep Calm And Code Tee shirt Homme Taille S", brand: "speedshirt", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-09-02", user: user_test, category: "", photo: "https://images-eu.ssl-images-amazon.com/images/I/41ufiIf4+4L._AC_UL246_SR190,246_.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
