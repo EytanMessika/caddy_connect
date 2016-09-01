@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
 
   def check_user_premium_status
     unless current_user.premium
+      flash[:alert] = 'Vous devez être membre premium pour accèder à ce service'
       redirect_to premium_path
     end
   end
