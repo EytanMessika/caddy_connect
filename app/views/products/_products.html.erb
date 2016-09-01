@@ -2,13 +2,7 @@
   <div class="col-xs-6 col-sm-3">
     <div class='card'>
       <%= image_tag product.photo, id: 'userImage' %>
-      <% if product.ecommerce == "Amazon" %>
-      <i class="fa fa-amazon" id='badge-card'></i>
-      <% elsif product.ecommerce == "Apple" %>
-      <i class="fa fa-apple" id='badge-card'></i>
-      <% else %>
       <i id='badge-card' style="font-size:11px;"><%= product.ecommerce  %></i>
-      <% end %>
       <h4 id='playerName'><%= product.name %></h4>
       <div class="category-product">
         <a href='#' type="button", data-toggle="modal" data-target="#category-modal-<%= product.id %>">
