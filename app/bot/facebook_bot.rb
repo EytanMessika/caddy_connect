@@ -40,7 +40,7 @@ Bot.on :message do |message|
         found_products = []
         words = message.text.split(" ")
         words.each do |word|
-          found_products = user.products.where("name LIKE ?", "%#{word}%")
+          found_products = user.products.where("name LIKE ?", "#{word}")
           if !found_products.blank?
             Bot.deliver(
               recipient: message.sender,
