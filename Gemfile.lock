@@ -81,6 +81,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    devise-i18n (1.1.0)
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -219,6 +220,9 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.0)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -296,6 +300,7 @@ DEPENDENCIES
   chartkick
   coffee-script
   devise!
+  devise-i18n
   facebook-messenger
   figaro
   font-awesome-sass
@@ -315,6 +320,7 @@ DEPENDENCIES
   public_activity
   puma
   rails (= 5.0.0.1)
+  rails-i18n
   redis
   sass-rails
   simple_form

@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
     else
       @products = @products.where(delivery_steps: @delivery_steps) unless @delivery_steps.blank?
     end
+    @booking = Booking.new
     # //GMAIL SCRAPPING//
     # client = GmailClient.new(current_user)
     # p "----------------------------"

@@ -1,0 +1,32 @@
+<% if !product.bookings.blank? %>
+  <!-- on suppose qu'il y en à qu'un seul (Thomas le 1/08/16) -->
+  <p>Un livreur viendra chercher votre produit 
+  <%= l(product.bookings.last.datetime, format: '%A %d %B à %Hh%M') %>
+  <br>
+    au <%= product.bookings.last.address %>
+  </p>
+
+<% else %>
+    <%= simple_form_for(booking) do |f| %>
+      <%= f.error_notification %>
+          <%= f.input :datetime, placeholder: "Date et heure du rendez-vous", as: :string, input_html: { id: "datetimepicker-#{product.id}"}, label: false%>
+          <%= f.input :address, placeholder: "16 Villa gaudelet 75003 Paris", label: false%>
+          <%= f.input :product_id, as: :hidden, :input_html => { value: product.id } %>
+          <%= f.button :submit, 'Programmer', class: 'brand-button' %>
+    <% end %>
+<% end %>
+
+<% content_for :after_js do %>
+  <script>
+  $(document).ready(function() {
+    console.log($('#datetimepicker-<%= product.id %>'));
+    $('#datetimepicker-<%= product.id %>').datetimepicker({
+      toolbarPlacement: 'default',
+      sideBySide: false,
+      // howTodayButton: true,
+      format: "YYYY-MM-DD hh:mm",
+      stepping: 15,
+    });
+  });
+  </script>
+<% end %>
