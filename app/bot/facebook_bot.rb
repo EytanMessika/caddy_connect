@@ -9,7 +9,8 @@ end
 delivery_state = {
   "InTransit"=> "en cours de livraison",
   "Delivered"=> "livré",
-  "Pending"=> "en attente"
+  "Pending"=> "en attente",
+  "" => "encore inconnu. Reviens vers moi bientôt. Je devrais en savoir plus."
 }
 
 FB_PAGE_ID = ENV['FB_PAGE_ID']
@@ -45,20 +46,31 @@ Bot.on :message do |message|
             Bot.deliver(
               recipient: message.sender,
               message: {
-                text: "Le statut de livraison de ton #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}"
+                text: "Ton #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}"
               }
             )
             break
+          elsif
+            case message.text.downcase
+            when /merci/i, "jte remercie", "cool merci", "génial merci", "tu gères", "merci champion"
+              Bot.deliver(
+                recipient: message.sender,
+                message: {
+                  text: "De rien mais tu devrais surtout remercier les profs & les TA. Maxime,  Dimitri,  Julien,  Gab,  Edward,  Kevin,  Karine,  Thomas,  David,  Claire,  Cécile,  Louis,  Boris,  Seb,  Romain. Mais aussi, Super-Gina et Edouard F !
+                  Keep calm and keep on coding !"
+                }
+              )
+            end
           end
         end
-        if found_products.blank?
-          Bot.deliver(
-            recipient: message.sender,
-            message: {
-              text: 'Désolé, ce produit est inexistant dans ma base de donnée'
-            }
-          )
-        end
+        # if found_products.blank?
+        #   Bot.deliver(
+        #     recipient: message.sender,
+        #     message: {
+        #       text: 'Désolé, ce produit est inexistant dans ma base de donnée'
+        #     }
+        #   )
+        # end
       end
     end
   end
