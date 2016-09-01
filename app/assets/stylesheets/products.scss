@@ -123,6 +123,12 @@ font-weight: bolder;
   margin-top: 30px;
 }
 
+.category p{
+  font-size: 16px;
+  color:#2C3947;
+  margin: 13px 0 11px;
+}
+
 .retour{
   padding: 20px;
   border: 1px solid #3FC1C9;
@@ -139,4 +145,16 @@ font-weight: bolder;
   color: #3FC1C9;
   margin-bottom: -18px;
   margin-top: 25px;
+}
+
+.header_retour p{
+  color: #3FC1C9;
+  margin-top: -12px;
+  margin-bottom: -20px;
+}
+
+.header_cat{
+  color: #3FC1C9;
+  margin-top: -15px;
+  margin-bottom: -20px;
 }

@@ -1,5 +1,6 @@
 <div class="wrapper-dashboard">
-  <div class="text-center">
+  <div class="facebook_button text-center">
+
     <div class="fb-send-to-messenger"
       messenger_app_id="<%= ENV['FACEBOOK_APP_ID'] %>"
       page_id="<%= ENV['FB_PAGE_ID'] %>"
@@ -7,8 +8,9 @@
       color="blue"
       size="standard" > 
     </div>
-  
-    <script>
+  </div>
+</div>  
+<script>
       window.fbAsyncInit = function() {
         FB.init({
           appId      : <%= ENV["FACEBOOK_APP_ID"] %>,
@@ -24,6 +26,4 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-    </script>
-  </div>
-</div>
+</script>
