@@ -1,3 +1,22 @@
 // Place all the styles related to the Activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.border_notif {
+  border-bottom: 1px solid #e2e2e2;
+  background-color: rgba(237, 237, 237, 0.34);
+}
+
+.border_notif:hover {
+  background-color: rgba(86, 232, 241, 0.28);
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
+.ul_pad {
+  padding: 0px;
+}

@@ -7,9 +7,9 @@
       </div>
     </div>
   <% end %>
-  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"">
+  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu ul_pad">
     <% notifications.each do |notification| %>
-      <li id="activity_link_<%= notification.id %>">
+      <li class="border_notif" id="activity_link_<%= notification.id %>">
         <%= link_to activity_path(notification), method: :patch, remote: true do %>
           <div class="activity unread-activity" id="notification-<%= notification.id %>" data-id="<%= notification.id %>">
             Produit <%= notification.trackable.name %> a été créé
