@@ -245,15 +245,15 @@ product.create_activity key: 'product.created', recipient: user_test
 product = Product.create!(name: "Maillot de Bain H", price: 37.90, description: "Maillot de bain homme taille S", brand: "Quicksilver", ecommerce: "Asos", tracking_number: "", purchase_date: "2016-06-01", user: user_test, category: "Vètement", photo: "http://static.quiksilver.com/www/store.quiksilver.eu/html/images/catalogs/global/quiksilver-products/all/default/medium-large2/eqybs03246_divisionremixvee19,v_kta6_frt1.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Titanic DVD", price: 9, description: "DVD Titanic Francais", brand: "Fnac", ecommerce: "Fnac", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Livre", photo: "http://pmcdn.priceminister.com/photo/Titanic-DVD-Zone-2-11173_L.jpg")
+product = Product.create!(name: "Ruby on Rails", price: 44.47, description: "Livre Ruby On Rails", brand: "Broché", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-26", user: user_test, category: "Culture", photo: "https://images-na.ssl-images-amazon.com/images/I/41T3LWapwwL._SX412_BO1,204,203,200_.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Ruby on Rails", price: 44.47, description: "Livre Ruby On Rails", brand: "Broché", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-08-26", user: user_test, category: "Culture", photo: "https://images-na.ssl-images-amazon.com/images/I/41T3LWapwwL._SX412_BO1,204,203,200_.jpg")
+product = Product.create!(name: "Titanic DVD", price: 9, description: "DVD Titanic Francais", brand: "Fnac", ecommerce: "Fnac", tracking_number: "", purchase_date: "2016-08-03", user: user_test, category: "Livre", photo: "http://pmcdn.priceminister.com/photo/Titanic-DVD-Zone-2-11173_L.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
 product = Product.create!(name: "Coque Batterie", price: 119, description: "Smart Battery Case pour iPhone 6s", brand: "Smart Battery Case", ecommerce: "Apple", tracking_number: "", purchase_date: "2016-08-28", user: user_test, category: "Hi-Tech", photo: "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/M/GQ/MGQL2/MGQL2?wid=890&hei=890&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=7m3lT0")
 product.create_activity key: 'product.created', recipient: user_test
 
-product = Product.create!(name: "Tee Shirt Code", price: 18.73, description: "Keep Calm And Code Tee shirt Homme Taille S", brand: "speedshirt", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-09-02", user: user_test, category: "", photo: "https://images-eu.ssl-images-amazon.com/images/I/41ufiIf4+4L._AC_UL246_SR190,246_.jpg")
+product = Product.create!(name: "Tee Shirt Code", price: 18.73, description: "Keep Calm And Code Tee shirt Homme Taille S", brand: "speedshirt", ecommerce: "Amazon", tracking_number: "", purchase_date: "2016-09-02", user: user_test, category: "Vètement", photo: "https://images-eu.ssl-images-amazon.com/images/I/41ufiIf4+4L._AC_UL246_SR190,246_.jpg")
 product.create_activity key: 'product.created', recipient: user_test
 
