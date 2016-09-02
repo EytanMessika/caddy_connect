@@ -72,7 +72,7 @@
               <%= category %>
             </div>
             <div class="total-cat text-center">
-              <%= products.map(&:price).reduce(:+) %>€
+              <%= products.map(&:price).reduce(:+).round(2) %>€
             </div>
             <div class="product-numbers">
               <div class="product-number text-center">
