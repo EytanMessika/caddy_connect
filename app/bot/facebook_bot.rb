@@ -41,12 +41,12 @@ Bot.on :message do |message|
         found_products = []
         words = message.text.split(" ")
         words.each do |word|
-          found_products = user.products.where("name LIKE ?", "#{word}")
+          found_products = user.products.where("name ~* ?", "\\y#{word}\\y")
           if !found_products.blank?
             Bot.deliver(
               recipient: message.sender,
               message: {
-                text: "Ton #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}"
+                text: "Ta #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}. Il arrivera lundi 5 Septembre 2016"
               }
             )
             break
@@ -56,7 +56,7 @@ Bot.on :message do |message|
               Bot.deliver(
                 recipient: message.sender,
                 message: {
-                  text: "De rien mais tu devrais surtout remercier les profs & les TA. Maxime,  Dimitri,  Julien,  Gab,  Edward,  Kevin,  Karine,  Thomas,  David,  Claire,  Cécile,  Louis,  Boris,  Seb,  Romain. Mais aussi, Super-Gina et Edouard F !
+                  text: "De rien, mais remercie surtout les profs & les TA. Maxime,  Dimitri,  Julien,  Gab,  Edward,  Kevin,  Karine,  Thomas,  David,  Benjamin,  Antoine,  Claire,  Cécile,  Louis,  Boris,  Seb,  Romain. Mais aussi, Super-Gina et Edouard F !
                   Keep calm and keep on coding !"
                 }
               )
