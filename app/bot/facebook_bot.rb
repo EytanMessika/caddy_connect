@@ -8,7 +8,7 @@ end
 
 delivery_state = {
   "InTransit"=> "en cours de livraison",
-  "Delivered"=> "livré",
+  "Delivered"=> "livrée",
   "Pending"=> "en attente",
   "" => "encore inconnu. Reviens vers moi bientôt. Je devrais en savoir plus."
 }
@@ -56,8 +56,7 @@ Bot.on :message do |message|
               Bot.deliver(
                 recipient: message.sender,
                 message: {
-                  text: "De rien, mais remercie surtout les profs & les TA. Maxime,  Dimitri,  Julien,  Gab,  Edward,  Kevin,  Karine,  Thomas,  David,  Benjamin,  Antoine,  Claire,  Cécile,  Louis,  Boris,  Seb,  Romain. Mais aussi, Super-Gina et Edouard F !
-                  Keep calm and keep on coding !"
+                  text: "De rien, mais remercie surtout les profs & les TA. Maxime,  Dimitri,  Julien,  Gab,  Edward,  Kevin,  Karine,  Thomas,  David,  Benjamin,  Antoine,  Claire,  Cécile,  Louis,  Boris,  Seb,  Romain. Mais aussi, Super-Gina et Edouard F ! Keep calm and keep on coding !"
                 }
               )
             end
