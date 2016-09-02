@@ -46,7 +46,7 @@ Bot.on :message do |message|
             Bot.deliver(
               recipient: message.sender,
               message: {
-                text: "Ta #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}. Il arrivera lundi 5 Septembre 2016"
+                text: "Ta #{found_products.first.name} est #{delivery_state[found_products.first.delivery_steps]}. Elle arrivera lundi 5 Septembre 2016"
               }
             )
             break
