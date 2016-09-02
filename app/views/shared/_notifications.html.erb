@@ -12,7 +12,7 @@
       <li class="border_notif" id="activity_link_<%= notification.id %>">
         <%= link_to activity_path(notification), method: :patch, remote: true do %>
           <div class="activity unread-activity" id="notification-<%= notification.id %>" data-id="<%= notification.id %>">
-            Le produit <%= notification.trackable.name %> à été importé!
+            Le produit <%= notification.trackable.name %> a été importé!
           </div>
         <% end %>
       </li>
